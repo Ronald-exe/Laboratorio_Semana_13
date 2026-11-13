@@ -1,0 +1,37 @@
+fecha: 2026-11-13T15:03:33-06:00
+--- g++ -v
+g++ (Ubuntu/Linaro 7.5.0-3ubuntu1~18.04) 7.5.0
+--- uname
+Linux jetson-181 4.9.253-tegra #1 SMP PREEMPT Sat Feb 19 08:59:22 PST 2022 aarch64 aarch64 aarch64 GNU/Linux
+--- nvpmodel -q
+sudo: no tty present and no askpass program specified
+--- jetson_clocks --show
+sudo: no tty present and no askpass program specified
+--- nucleos online
+0-1
+--- governor / frecuencia actual (kHz)
+cpu0: schedutil 921600
+cpu1: schedutil 921600
+cpu2: schedutil 921600
+cpu3: schedutil 921600
+--- lscpu
+Architecture:         aarch64
+Byte Order:           Little Endian
+CPU(s):               4
+On-line CPU(s) list:  0,1
+Off-line CPU(s) list: 2,3
+Thread(s) per core:   1
+Core(s) per socket:   2
+Socket(s):            1
+Vendor ID:            ARM
+Model:                1
+Model name:           Cortex-A57
+Stepping:             r1p1
+CPU max MHz:          1479,0000
+CPU min MHz:          102,0000
+BogoMIPS:             38.40
+L1d cache:            32K
+L1i cache:            48K
+L2 cache:             2048K
+Flags:                fp asimd evtstrm aes pmull sha1 sha2 crc32
+--- parametros: REPS=10000 RUNS=5 SEED=12345 SEG=10 CORE=sin fijar

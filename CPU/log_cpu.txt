@@ -1,0 +1,12 @@
+>> Compilando
+>> Registrando entorno en resultados/entorno.txt
+>> Validacion fp16
+>> Mediciones fp16 (funcion + programa completo)
+>> Ventana larga para potencia/energia fp16 (10s por N)
+>> Validacion fp32
+>> Mediciones fp32 (funcion + programa completo)
+>> Ventana larga para potencia/energia fp32 (10s por N)
+>> Listo. Resumen: python3 resumen.py
+./run_all.sh: line 1: 24820 Terminated              ( stdbuf -oL tegrastats --interval 500 | while IFS= read -r l; do
+    echo "$(date +%s.%N) $l";
+done ) > "$RES/tegrastats.log" 2>&1

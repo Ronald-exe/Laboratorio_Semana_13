@@ -21,7 +21,7 @@
 #include <vector>
 
 // GCC 7 (JetPack 4.x) no tiene _Float16; en aarch64 se usa __fp16 (IEEE binary16, solo almacenamiento).
-#if defined(__FLT16_MAX__)
+#if defined(__FLT16_MAX__) && !defined(__aarch64__)
 typedef _Float16 half_t;
 static const char* HALF_NAME = "_Float16";
 #elif defined(__aarch64__) || defined(__ARM_FP16_FORMAT_IEEE)
