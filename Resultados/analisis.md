@@ -38,34 +38,109 @@ En FP16 (todo en `half`), la variante 0 da 18023 ciclos a 137 MHz con 6 DSP y la
 
 **1. ¿Qué etapa domina el tiempo en cada plataforma y cómo cambia con N?**
 
-En la CPU domina el cómputo de la función (exponencial y suma), creciendo lineal con N. En la GPU domina el costo fijo de la API: `cudaLaunchKernel` (~95 µs), `cudaMemcpy` (~100 µs) y la sincronización (~110 µs), contra un kernel de 66–103 µs y copias de 2–9 µs, por lo cual el end-to-end casi no cambia con N. En la KV260 dominan las transferencias desde el host (**81–90 %** del total, 216–235 µs), mientras que el IP crece de 1.4 a 28.7 µs con N y es la única parte que escala con el tamaño.
+En la Tabla 1 se presenta el desglose del tiempo por llamada (µs, FP32) para el vector más pequeño y el más grande.
+
+| Plataforma | Etapa | N=10 | N=1000 |
+|---|---|---|---|
+| CPU | Función completa | 0.50 | 43.93 |
+| GPU | Kernel (`nvprof`) | 64.99 | 101.46 |
+| GPU | Copias H→D + D→H (`nvprof`) | 6.89 | 17.86 |
+| GPU | End-to-end | 352.59 | 436.78 |
+| KV260 | IP (cosim, 100 MHz) | 1.41 | 28.65 |
+| KV260 | Transferencias desde el host | 215.94 | 234.51 |
+| KV260 | Total host | 240.95 | 289.41 |
+
+*Tabla 1. Desglose del tiempo por llamada en FP32.*
+
+En la CPU domina el cómputo, el cual crece lineal con N, mientras que en la GPU y en la KV260 domina el costo fijo de comunicarse con el acelerador (la API de CUDA y las transferencias desde Python), por lo cual su tiempo total casi no cambia con N y solo el cómputo del acelerador crece con el tamaño.
 
 **2. ¿Qué diferencia de error aparece entre FP16 y FP32? ¿Se debe al formato, la exponencial o la reducción?**
 
-FP16 tiene un error relativo alrededor de 10⁴ veces mayor que FP32. En la CPU y la GPU se debe al **formato**, ya que solo la entrada y la salida se redondean a 16 bits, y con N=1000 varias salidas son menores a 6.1e-5 (el menor normal de FP16) y pierden bits de mantisa, por eso el error relativo crece con N. En el kernel HLS con todo en `half` también aporta la **reducción**: con la suma secuencial la salida suma **1.0055** con N=1000 (contra 0.99999 en la CPU), y además las salidas muy pequeñas se vuelven 0 (error relativo de 1.0). Esto último se mantiene incluso en la variante 4 medida en la KV260, donde el cómputo es en FP32: con N ≥ 100 el error relativo máximo es **1.0** y la suma cae a **0.9929** con N=1000, y el error absoluto máximo (**6.08e-5**) queda justo debajo de **6.1e-5**, el menor normal de FP16. Esto se debe a que el núcleo de conversión a `half` de AMD **aplana los subnormales a cero** (*flush-to-zero*), mientras que el `__fp16` de la CPU sí los conserva (error de **7.7e-6**), por lo cual en la FPGA la diferencia se debe al **formato** y no a la exponencial.
+En la Tabla 2 se presenta el error relativo máximo contra FP64.
+
+| Plataforma | FP32, N=10 | FP32, N=1000 | FP16, N=10 | FP16, N=1000 |
+|---|---|---|---|---|
+| CPU | 2.04e-7 | 1.14e-6 | 1.69e-3 | 1.16e-2 |
+| GPU | 3.15e-7 | 4.59e-7 | 1.69e-3 | 1.16e-2 |
+| KV260 | 2.14e-7 | 4.47e-7 | 1.69e-3 | 1.00 |
+
+*Tabla 2. Error relativo máximo contra FP64.*
+
+Notamos que FP16 tiene un error unas 10⁴ veces mayor que FP32 y que la CPU y la GPU dan exactamente el mismo error en FP16, esto se debe a que el error viene del **formato**, ya que ambas redondean a 16 bits solo la entrada y la salida, y crece con N porque las salidas menores a 6.1e-5 quedan como subnormales con menos bits de mantisa. En la KV260 el error relativo llega a 1.0 porque el núcleo `half` de AMD aplana los subnormales a cero, o sea, sigue siendo el formato, mientras que la **reducción** solo aportó error cuando la suma se hacía en `half` (la variante 1 sumaba **1.0055** con N=1000), lo cual se eliminó calculando en FP32 en la variante 4.
 
 **3. ¿Por qué la GPU puede ser peor que la CPU para vectores pequeños?**
 
-Porque con N=10 la CPU termina en **0.55 µs** y la GPU tarda **416 µs** end-to-end (unas 750 veces más), ya que paga un costo fijo de lanzamiento, copias y sincronización que no depende de N, y con 10 elementos casi todos los 256 hilos del bloque quedan ociosos. Incluso con N=1000 la CPU (**48.7 µs**) sigue siendo más rápida que el kernel solo (**103.5 µs**), ya que se usa un único bloque y la GPU de 5W trabaja a baja frecuencia.
+En la Tabla 3 se compara la CPU con la GPU en FP16.
+
+| N | CPU (función) | GPU (kernel, `nvprof`) | GPU (end-to-end) |
+|---|---|---|---|
+| 10 | 0.55 µs | 65.74 µs | 416.16 µs |
+| 1000 | 48.70 µs | 103.45 µs | 441.37 µs |
+
+*Tabla 3. CPU contra GPU en FP16.*
+
+La GPU es peor porque paga un costo fijo de lanzamiento, copias y sincronización de unos 400 µs que no depende de N, y con 10 elementos casi todos los 256 hilos quedan ociosos, por lo cual con N=10 es unas 750 veces más lenta que la CPU, e incluso con N=1000 su kernel solo ya tarda más que la CPU completa.
 
 **4. ¿Qué diferencia hay entre latencia HLS y tiempo total observado desde el host?**
 
-La latencia HLS son solo los ciclos del IP (**1.4 µs** con N=10 y **28.7 µs** con N=1000 a 100 MHz), mientras que el host observa **241–289 µs**, ya que además incluye copiar el vector al buffer, sincronizar la caché (**216–235 µs**) y acceder a los registros AXI-Lite y sondear `ap_done` desde Python (**~25 µs**).
+En la Tabla 4 se presentan los tiempos de la KV260 en FP32.
+
+| N | Latencia HLS (cosim) | IP medido desde Python | Total observado desde el host |
+|---|---|---|---|
+| 10 | 141 ciclos = 1.41 µs | 25.05 µs | 240.95 µs |
+| 1000 | 2865 ciclos = 28.65 µs | 54.83 µs | 289.41 µs |
+
+*Tabla 4. Latencia HLS contra tiempo observado desde el host (FP32).*
+
+La latencia HLS son solo los ciclos del IP, mientras que el host además ve unos 24–26 µs de acceso a registros AXI-Lite y sondeo de `ap_done` desde Python y unos 216–235 µs de copia y sincronización de caché, por lo cual el IP representa menos del 10 % del tiempo total.
 
 **5. ¿Qué optimización HLS mejoró más la latencia y cuánto aumentó el uso de recursos?**
 
-En ciclos, la que más mejoró fue **PIPELINE**: bajó de 34023 a 3058 ciclos (**11 veces menos**) aumentando solo un 10 % los LUT (3663 → 4046) y de 9 a 11 DSP, mientras que ARRAY_PARTITION + UNROLL solo bajó a 2464 ciclos (1.24 veces más) a cambio de **4.5 veces** más LUT, **10 veces** más DSP (112) y 8.5 veces más BRAM, y DATAFLOW no cambió la latencia, ya que el máximo tiene que terminar antes de empezar la exponencial. Sin embargo, forzar II=1 bajó la Fmax de **137 a 38.9 MHz**, por lo cual en tiempo real la mejora fue de 248 a 78.7 µs (3.2 veces) y no de 11 veces, lo cual motivó la propuesta.
+En la Tabla 5 se presentan las variantes en FP32 con N=1000.
 
-### Propuesta de optimización (variante 4)
+| Variante | Ciclos | Fmax | Tiempo a Fmax | LUT | DSP | BRAM 18K |
+|---|---|---|---|---|---|---|
+| 0: secuencial | 34023 | 137.0 MHz | 248 µs | 3663 | 9 | 4 |
+| 1: + PIPELINE | 3058 | 38.9 MHz | 78.7 µs | 4046 | 11 | 4 |
+| 2: + ARRAY_PARTITION | 2464 | 38.9 MHz | 63.4 µs | 18321 | 112 | 34 |
+| 3: + DATAFLOW | 2468 | 38.9 MHz | 63.5 µs | 17482 | 112 | 34 |
+| 4: propuesta | 2853 | 117.1 MHz | 24.4 µs | 9771 | 46 | 34 |
 
-- **Hipótesis:** la reducción flotante con II=1 es la que limita la frecuencia. La suma `s += …` depende de la iteración anterior y Vitis encadenó el sumador en un solo ciclo (13.08 ns contra 7.3 ns de presupuesto a 100 MHz). El sumador flotante de la KV260 tiene latencia de **4 ciclos** a 100 MHz (núcleo `faddfsub_32ns_32ns_32_4_full_dsp`), por lo cual la suma necesita **II=4**; como cada iteración procesa 8 elementos, se mantiene un throughput de 2 elementos por ciclo.
-- **Verificación intermedia:** un primer intento con **II=2** solo subió la Fmax de **38.9 a 46.5 MHz** (combinacional de 10.97 ns), lo cual confirmó que el límite es la latencia del sumador.
-- **Cambio adicional en FP16:** la entrada y la salida siguen en `half`, pero máximo, exponencial, suma y normalización se hacen en FP32, igual que en la CPU. Esto quitó el error de la reducción (la suma secuencial en `half` daba 1.0055), pero en hardware las salidas menores a 6.1e-5 siguen saliendo en 0 por el *flush-to-zero* de la conversión a `half`.
-- **Antes / después (variante 3 → 4, FP32):** la Fmax sube de **38.9 a 117.1 MHz** (3 veces), la latencia pasa de 2468 a 2853 ciclos (+16 %), pero el tiempo a la Fmax baja de **63.5 a 24.4 µs (2.6 veces más rápido)**, y además usa **menos** recursos: LUT de 17482 a 9771 (−44 %), FF de 14457 a 9271 (−36 %) y DSP de 112 a 46 (−59 %), ya que con II=4 Vitis puede compartir unidades de cómputo entre ciclos. La cosim pasa y el bitstream cierra timing a 100 MHz con **WNS = +3.78 ns**, por lo cual **el cambio sí mejoró el rendimiento** y además fue el que permitió medir en hardware.
+*Tabla 5. Latencia y recursos de las variantes HLS (FP32).*
+
+La que más mejoró fue **PIPELINE**, que bajó los ciclos 11 veces con solo un 10 % más de LUT, mientras que ARRAY_PARTITION solo ganó 1.24 veces más a cambio de 4.5 veces más LUT y 10 veces más DSP, y DATAFLOW no cambió la latencia. Sin embargo, forzar II=1 bajó la Fmax de 137 a 38.9 MHz, por lo cual en tiempo real la mejora fue solo de 3.2 veces, lo cual motivó la propuesta de la variante 4.
 
 **6. ¿Cuál plataforma minimiza tiempo y cuál energía por elemento? ¿Cambia la respuesta entre FP16 y FP32?**
 
-En tiempo la **CPU** gana para todos los N (**0.50–43.9 µs** en FP32), seguida por la KV260 (**241–289 µs** total host) y por último la GPU (**353–437 µs** end-to-end). Si se compara solo el cómputo, el IP de la KV260 (**28.7 µs** por cosim con N=1000) ya es más rápido que la CPU (**43.9 µs**), pero el costo de las transferencias desde Python lo opaca. En energía solo se pudo medir la KV260 (**1.01 µJ por elemento** con N=1000 y **86 µJ** con N=10 en FP32, porque el costo fijo por llamada se reparte entre más elementos), ya que la Nano 2GB no tiene sensor. La respuesta no cambia entre FP16 y FP32: la CPU sigue siendo la más rápida, aunque en la KV260 FP16 es algo mejor que FP32 con N=1000 (**270 contra 289 µs** y **0.94 contra 1.01 µJ por elemento**), ya que mueve la mitad de bytes por la interfaz.
+En la Tabla 6 se presenta el tiempo total por llamada y la energía por elemento.
+
+| Plataforma | Tiempo FP32 (N=10 / N=1000) | Tiempo FP16 (N=10 / N=1000) | Energía por elemento FP32 (N=10 / N=1000) | Energía por elemento FP16 (N=10 / N=1000) |
+|---|---|---|---|---|
+| CPU | 0.50 / 43.93 µs | 0.55 / 48.70 µs | N/D | N/D |
+| GPU (end-to-end) | 352.59 / 436.78 µs | 416.16 / 441.37 µs | N/D | N/D |
+| KV260 (total host) | 240.95 / 289.41 µs | 239.67 / 270.45 µs | 86.10 / 1.01 µJ | 84.58 / 0.94 µJ |
+
+*Tabla 6. Tiempo total y energía por elemento (la Nano 2GB no tiene sensor de potencia).*
+
+La **CPU** minimiza el tiempo para todos los N en ambas precisiones, y la única plataforma con energía medida es la **KV260**, cuya energía por elemento baja de unos 85 µJ con N=10 a menos de 1 µJ con N=1000, ya que el costo fijo por llamada se reparte entre más elementos. La respuesta no cambia entre FP16 y FP32, aunque en la KV260 FP16 es un 7 % mejor con N=1000, debido a que mueve la mitad de bytes por la interfaz.
+
+## Propuesta de optimización (variante 4)
+
+En la Tabla 7 se presenta la comparación antes y después de la propuesta.
+
+| | Variante 3 (antes) | Variante 4 (después) | Cambio |
+|---|---|---|---|
+| II del bucle de la suma | 1 | 4 | — |
+| Fmax estimada | 38.9 MHz | 117.1 MHz | 3.0 veces |
+| Latencia (N=1000) | 2468 ciclos | 2853 ciclos | +16 % |
+| Tiempo a Fmax (N=1000) | 63.5 µs | 24.4 µs | 2.6 veces más rápido |
+| LUT / FF | 17482 / 14457 | 9771 / 9271 | −44 % / −36 % |
+| DSP | 112 | 46 | −59 % |
+| Timing a 100 MHz en Vivado | no cerraría | WNS = +3.78 ns | cumple |
+
+*Tabla 7. Antes y después de la propuesta (FP32).*
+
+La hipótesis fue que la suma `s += e`, al depender de la iteración anterior, obligaba a Vitis a encadenar el sumador flotante en un solo ciclo (13.08 ns contra 7.3 ns de presupuesto), y como el sumador de la KV260 tiene una latencia de 4 ciclos a 100 MHz, se usó **II=4** en ese bucle, manteniendo 2 elementos por ciclo porque cada iteración procesa 8. Un primer intento con II=2 solo llegó a 46.5 MHz, lo cual confirmó la hipótesis. Además, en FP16 se dejó solo la entrada y la salida en `half` y se calculó en FP32, eliminando el error de la reducción. Con esto concluimos que **el cambio sí mejoró el rendimiento**, ya que fue 2.6 veces más rápido con menos de la mitad de los DSP y permitió medir en hardware.
 
 ## Limitaciones
 
