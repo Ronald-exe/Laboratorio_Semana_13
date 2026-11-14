@@ -1,17 +1,17 @@
 # build_bitstream.tcl - Arma el diseno de bloques (PS Zynq MPSoC + IP softmax_hls) y genera
 # el bitstream (.bit) y el archivo de descripcion de hardware (.hwh) que usa PYNQ.
 #
-# Requisito: haber corrido run_hls.tcl (exporta el IP de la variante EXPORTAR, por defecto 2).
+# Requisito: haber corrido run_hls.tcl (exporta el IP de la variante EXPORTAR, por defecto 4).
 # Uso, desde la carpeta FPGA/:
 #     vivado -mode batch -source build_bitstream.tcl -tclargs fp32
 #     vivado -mode batch -source build_bitstream.tcl -tclargs fp16
-# (argumento opcional 2: la variante, por defecto 2)
+# (argumento opcional 2: la variante, por defecto 4)
 #
 # Resultado: overlay/softmax_<prec>.bit y overlay/softmax_<prec>.hwh (mismo nombre base:
 # PYNQ busca el .hwh junto al .bit).
 
 set prec [expr {[llength $argv] > 0 ? [lindex $argv 0] : "fp32"}]
-set var  [expr {[llength $argv] > 1 ? [lindex $argv 1] : 2}]
+set var  [expr {[llength $argv] > 1 ? [lindex $argv 1] : 4}]
 set dir  [file dirname [file normalize [info script]]]
 set ipdir $dir/proy_${prec}_v${var}/sol/impl/ip
 set nombre kv260_softmax_$prec

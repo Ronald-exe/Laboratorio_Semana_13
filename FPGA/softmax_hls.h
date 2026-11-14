@@ -6,13 +6,14 @@
 //   -DVARIANTE=k    -> que version del kernel se sintetiza:
 //                      0 = secuencial (sin pipeline, es la linea base)
 //                      1 = + PIPELINE II=1 en cada bucle
-//                      2 = + ARRAY_PARTITION cyclic + UNROLL (procesa F elementos por iteracion)
+//                      2 = + ARRAY_PARTITION cyclic + UNROLL (procesa FACTOR_PART elementos por iteracion)
 //                      3 = + DATAFLOW (las etapas se vuelven procesos que se solapan)
+//                      4 = propuesta: la 3 con II=4 en la suma y aritmetica interna en FP32
 #ifndef SOFTMAX_HLS_H
 #define SOFTMAX_HLS_H
 
 #define MAX_N 1000   // tamano maximo del vector (lo pide el enunciado)
-#define F 8          // factor de particion/unroll de las variantes 2 y 3 (MAX_N es multiplo de F)
+#define FACTOR_PART 8          // factor de particion/unroll de las variantes 2 y 3 (MAX_N es multiplo de FACTOR_PART)
 
 #ifndef VARIANTE
 #define VARIANTE 0

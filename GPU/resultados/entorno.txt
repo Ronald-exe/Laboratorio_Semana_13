@@ -1,0 +1,14 @@
+fecha: 2026-11-13T17:44:32-06:00
+--- nvpmodel -q
+NV Power Mode: 5W
+1
+--- nucleos CPU online
+0-1
+--- frecuencia GPU actual/max (Hz)
+76800000
+614400000
+--- nvcc
+Build cuda_10.2_r440.TC440_70.29663091_0
+--- modelo
+NVIDIA Jetson Nano 2GB Developer Kit
+--- parametros: MED=1000

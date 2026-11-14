@@ -57,7 +57,7 @@ timing y potencia estimada de Vivado. Usa la variante 2 por defecto (`-tclargs f
 
 ```bash
 # desde la PC
-rsync -avz -e "ssh -J ecaslab" FPGA/host_kv260.py FPGA/overlay el5859@192.168.0.83:~/Ronald/FPGA/
+rsync -avz -e "ssh -J ecaslab" FPGA/host_kv260.py FPGA/overlay el5859@192.168.0.85:~/Ronald/FPGA/
 # en la Kria
 cd ~/Ronald/FPGA
 sudo bash -c 'source /etc/profile.d/pynq_venv.sh && python3 host_kv260.py --bit overlay/softmax_fp32.bit --precision fp32'

@@ -14,7 +14,7 @@ import re
 import xml.etree.ElementTree as ET
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
-NOMBRES = {"0": "secuencial", "1": "pipeline", "2": "pipeline+partition", "3": "pipeline+partition+dataflow"}
+NOMBRES = {"0": "secuencial", "1": "pipeline", "2": "pipeline+partition", "3": "pipeline+partition+dataflow", "4": "propuesta: II=4 en suma + computo FP32"}
 
 
 def texto(raiz, etiqueta):
