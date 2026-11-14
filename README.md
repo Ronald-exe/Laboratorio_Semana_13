@@ -2,6 +2,15 @@
 
 ## EL5859 Computación Heterogénea | II Semestre 2026
 
+**Grupo 1** | Profesor: Luis Gerardo León Vega
+
+| Integrante | Carnet |
+|---|---|
+| Ronald Duarte Barrantes | 2021004089 |
+| Khaterine Salazar Martinez | 2014160591 |
+| Fabian Chacon Solano | 2018135154 |
+| Keylor Muñoz Soto | 2020100689 |
+
 Implementación de softmax numéricamente estable en FP16 y FP32 sobre tres plataformas, comparando tiempo, energía y exactitud para `N ∈ {10, 100, 500, 1000}`:
 
 $$m = \max_i x_i, \qquad y_i = \frac{e^{x_i - m}}{\sum_j e^{x_j - m}}$$

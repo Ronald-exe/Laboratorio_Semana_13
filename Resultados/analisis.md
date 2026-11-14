@@ -1,5 +1,14 @@
 # Análisis de resultados: Softmax en CPU, GPU y FPGA
 
+**EL5859 Computación Heterogénea, II Semestre 2026** | **Grupo 1** | Profesor: Luis Gerardo León Vega
+
+| Integrante | Carnet |
+|---|---|
+| Ronald Duarte Barrantes | 2021004089 |
+| Khaterine Salazar Martinez | 2014160591 |
+| Fabian Chacon Solano | 2018135154 |
+| Keylor Muñoz Soto | 2020100689 |
+
 ## 1. Condiciones de medición
 
 | Plataforma | Equipo | Configuración | Medición de energía |
@@ -10,8 +19,7 @@
 
 *Condiciones de medición por plataforma.*
 
-> [!NOTE]
-> En todas las plataformas se usó la misma entrada (generador `splitmix64`, semilla 12345, `x ∈ [-4, 4]`) y la misma referencia: Softmax en FP64 con `std::exp`. Antes de medir se realizó una corrida de calentamiento, se tomaron al menos 5 mediciones por configuración y se reportan la mediana, el mínimo y el máximo.
+En todas las plataformas se usó la misma entrada (generador `splitmix64`, semilla 12345, `x ∈ [-4, 4]`) y la misma referencia: Softmax en FP64 con `std::exp`. Antes de medir se realizó una corrida de calentamiento, se tomaron al menos 5 mediciones por configuración y se reportan la mediana, el mínimo y el máximo.
 
 ---
 
@@ -21,21 +29,19 @@ Las tablas completas están en `tablas_comparativas.md` (generadas con `python3 
 
 ### 2.1 CPU
 
-En la CPU, el tiempo de la función crece de forma lineal con N, con aproximadamente **0.049 µs por elemento** en FP16 y **0.044 µs por elemento** en FP32, pasando de **0.55 µs** con N = 10 a **48.70 µs** con N = 1000 en FP16, y de **0.50 µs** a **43.92 µs** en FP32. Notamos que FP16 es alrededor de un **10 % más lento** que FP32, lo cual se debe a que el Cortex-A57 no tiene aritmética FP16, solo instrucciones de conversión, por lo que cada elemento se convierte a FP32 para la exponencial y la suma y luego se redondea de vuelta a 16 bits, lo que agrega trabajo sin ahorrar cómputo.
+El tiempo crece lineal con N, de **0.50 a 43.92 µs** en FP32 y de **0.55 a 48.70 µs** en FP16. Notamos que FP16 es un **10 % más lento**, lo cual se debe a que el Cortex-A57 no tiene aritmética FP16 y solo agrega conversiones.
 
 ### 2.2 GPU
 
-En la GPU el comportamiento es el opuesto, ya que el tiempo casi no cambia con N. Según `nvprof`, el kernel tarda **65.7 µs** con N = 10 y **103.5 µs** con N = 1000 en FP16, mientras que el tiempo end-to-end se mantiene cerca de **415–440 µs** para todos los tamaños. Notamos que el kernel medido con `cudaEvent` (**149 µs** con N = 10) es más del doble del reportado por el perfilador, lo cual se debe a que el evento incluye el costo de lanzar el kernel, que según `nvprof` es de **~95 µs** por llamada a `cudaLaunchKernel`. Las copias de memoria son pequeñas (**2–9 µs**), por lo que el costo de la GPU está dominado por el lanzamiento, la sincronización y las llamadas a la API, y no por el cómputo ni por los datos.
+El tiempo casi no cambia con N: el kernel tarda **65.7–103.5 µs** según `nvprof` y el end-to-end se mantiene en **415–440 µs** (FP16). El kernel medido con `cudaEvent` (**149 µs** con N = 10) es más del doble que el del perfilador, ya que incluye el lanzamiento.
 
 ### 2.3 KV260
 
-En la KV260 (FP32, variante 4), el tiempo total observado desde el host va de **241 µs** con N = 10 a **289 µs** con N = 1000, del cual el IP medido desde Python ocupa **25.1 µs** y **54.8 µs**, respectivamente, y el resto (**216–235 µs**) corresponde a las transferencias, es decir, a copiar el vector al buffer DMA y sincronizar la caché (`sync_to_device`/`sync_from_device`). Según la cosimulación, la latencia pura del IP es de **141 ciclos (1.4 µs)** con N = 10 y de **2865 ciclos (28.7 µs)** con N = 1000 a 100 MHz, por lo que unos **24–26 µs** del tiempo del IP corresponden al costo de acceder a los registros AXI-Lite y de sondear `ap_done` desde Python.
-
-En cuanto a la energía, el SOM consume **3.47 W** durante las llamadas frente a **3.15 W** en reposo, lo cual da **861 µJ** por llamada con N = 10 y **1014 µJ** con N = 1000, de los cuales solo **~75–79 µJ** son energía dinámica por encima del reposo. En FP16 el comportamiento es casi igual, con un tiempo total de **240 µs** con N = 10 y **270 µs** con N = 1000, el IP entre **24.9 y 48.6 µs** y entre **846 y 941 µJ** por llamada.
+El tiempo total desde el host va de **241 a 289 µs** en FP32 y de **240 a 270 µs** en FP16, del cual el IP ocupa solo **25–55 µs**. La placa consume **3.47 W** contra **3.15 W** en reposo, lo cual da **861–1014 µJ** por llamada, de los cuales solo **~75–79 µJ** son energía dinámica.
 
 ### 2.4 Exactitud
 
-En FP32, todas las plataformas tienen errores absolutos del orden de **1e-8 a 1e-9**, mientras que en FP16 están entre **3e-4 y 8e-6**. El error absoluto baja con N solamente porque cada salida vale aproximadamente 1/N, por eso es más representativo el error relativo, el cual en FP16 sube de **1.7e-3** (N = 10) a **1.2e-2** (N = 1000).
+En FP32 el error absoluto es del orden de **1e-8 a 1e-9** y en FP16 de **3e-4 a 8e-6**. El error absoluto baja con N solo porque cada salida vale cerca de 1/N, por eso se usa el error relativo, que en FP16 sube de **1.7e-3 a 1.2e-2**.
 
 ### 2.5 Síntesis HLS (FP32, reloj objetivo de 10 ns)
 
@@ -49,7 +55,7 @@ En FP32, todas las plataformas tienen errores absolutos del orden de **1e-8 a 1e
 
 *Resultados de síntesis y cosimulación por variante (FP32).*
 
-En FP16, con todo el cómputo en `half`, la variante 0 da 18023 ciclos a 137 MHz con 6 DSP y la variante 1 da 3044 ciclos a 81.7 MHz con 6 DSP, es decir, cerca de la mitad de los DSP que en FP32, ya que los núcleos de 16 bits son más pequeños. La variante 4 en FP16 da **2855 ciclos a 117.1 MHz** con 10010 LUT y 46 DSP, prácticamente lo mismo que en FP32, ya que internamente calcula en FP32 y solo la entrada y la salida son `half`.
+En FP16 las variantes 0 y 1 usan **6 DSP** (cerca de la mitad que en FP32, ya que los núcleos de 16 bits son más pequeños), y la variante 4 da **2855 ciclos a 117.1 MHz**, casi igual que en FP32, ya que internamente calcula en FP32.
 
 ---
 
