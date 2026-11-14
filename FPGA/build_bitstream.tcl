@@ -12,10 +12,13 @@
 
 set prec [expr {[llength $argv] > 0 ? [lindex $argv 0] : "fp32"}]
 set var  [expr {[llength $argv] > 1 ? [lindex $argv 1] : 4}]
-set dir  [file dirname [file normalize [info script]]]
-set ipdir $dir/proy_${prec}_v${var}/sol/impl/ip
+# Usamos la carpeta actual (el .bat hace cd a FPGA). OJO: no se llama "dir" porque los scripts
+# internos de Vivado sobrescriben una variable global con ese nombre (asi termino el overlay
+# en la carpeta de instalacion de Vivado en la primera corrida).
+set sm_dir [pwd]
+set ipdir $sm_dir/proy_${prec}_v${var}/sol/impl/ip
 set nombre kv260_softmax_$prec
-set pdir $dir/vivado_$prec
+set pdir $sm_dir/vivado_$prec
 
 if {![file exists $ipdir]} { error "No existe $ipdir: primero corra run_hls.tcl" }
 
@@ -75,15 +78,15 @@ launch_runs impl_1 -to_step write_bitstream -jobs 8
 wait_on_run impl_1
 if {[get_property PROGRESS [get_runs impl_1]] ne "100%"} { error "La implementacion fallo" }
 
-file mkdir $dir/overlay
-file copy -force $pdir/$nombre.runs/impl_1/design_1_wrapper.bit $dir/overlay/softmax_$prec.bit
+file mkdir $sm_dir/overlay
+file copy -force $pdir/$nombre.runs/impl_1/design_1_wrapper.bit $sm_dir/overlay/softmax_$prec.bit
 set hwh [lindex [glob -nocomplain $pdir/$nombre.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh \
                                   $pdir/$nombre.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh] 0]
-file copy -force $hwh $dir/overlay/softmax_$prec.hwh
+file copy -force $hwh $sm_dir/overlay/softmax_$prec.hwh
 # Reporte de utilizacion y timing del diseno completo (sirve para el informe)
 open_run impl_1
-report_utilization -file $dir/overlay/utilizacion_$prec.rpt
-report_timing_summary -file $dir/overlay/timing_$prec.rpt
-report_power -file $dir/overlay/potencia_estimada_$prec.rpt
+report_utilization -file $sm_dir/overlay/utilizacion_$prec.rpt
+report_timing_summary -file $sm_dir/overlay/timing_$prec.rpt
+report_power -file $sm_dir/overlay/potencia_estimada_$prec.rpt
 puts "LISTO: overlay/softmax_$prec.bit y overlay/softmax_$prec.hwh"
 exit

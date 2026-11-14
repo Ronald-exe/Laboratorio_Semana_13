@@ -275,16 +275,19 @@ def graficas(filas):
               ("GPU", "end_to_end", "--", "GPU (end-to-end)"),
               ("KV260", "total_host", "-", "KV260 (total host)"),
               ("KV260", "ip", "--", "KV260 (IP)")]
+    # La energia es de la llamada completa: una sola serie por plataforma
+    SERIES_ENERGIA = [("CPU", "funcion", "-", "CPU"), ("GPU", "end_to_end", "-", "GPU"),
+                      ("KV260", "total_host", "-", "KV260 (SOM completo, INA260)")]
     plt.rcParams.update({"font.size": 10, "axes.spines.top": False, "axes.spines.right": False,
                          "axes.edgecolor": "#8a8a85", "axes.labelcolor": "#2b2b29",
                          "xtick.color": "#5c5c58", "ytick.color": "#5c5c58"})
     hechas = []
 
-    def figura(nombre, titulo, eje_y, valor, dispersion=True):
+    def figura(nombre, titulo, eje_y, valor, dispersion=True, series=None):
         fig, ejes = plt.subplots(1, 2, figsize=(10, 4), sharey=True)
         hay = False
         for ax, p in zip(ejes, PRECS):
-            for plat, med, estilo, etiqueta in SERIES:
+            for plat, med, estilo, etiqueta in (series or SERIES):
                 pts = sorted((f["n"], f) for f in filas if f["plataforma"] == plat and f["medida"] == med
                              and f["precision"] == p)
                 pts = [(n, f, valor(f)) for n, f in pts if valor(f) is not None]
@@ -335,9 +338,10 @@ def graficas(filas):
            lambda f: float(f["err_rel_max"]) if f.get("err_rel_max") not in (None, "") else None,
            dispersion=False)
     figura("energia_llamada_vs_N.png", "Energía por llamada contra N", "Energía por llamada (µJ)",
-           energia_de, dispersion=False)
+           energia_de, dispersion=False, series=SERIES_ENERGIA)
     figura("energia_elemento_vs_N.png", "Energía por elemento contra N", "Energía por elemento (µJ)",
-           lambda f: energia_de(f) / f["n"] if energia_de(f) is not None else None, dispersion=False)
+           lambda f: energia_de(f) / f["n"] if energia_de(f) is not None else None, dispersion=False,
+           series=SERIES_ENERGIA)
     return hechas
 
 

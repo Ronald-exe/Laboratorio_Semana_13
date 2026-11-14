@@ -90,11 +90,12 @@ Resumen del tiempo por llamada (mediana, µs):
 | CPU | función | 0.55 | 48.70 | 0.50 | 43.93 |
 | GPU | kernel (nvprof) | 65.74 | 103.45 | 64.99 | 101.46 |
 | GPU | end-to-end | 416.16 | 441.37 | 352.59 | 436.78 |
-| KV260 | total host | pendiente | pendiente | pendiente | pendiente |
+| KV260 | total host | 239.67 | 270.45 | 240.95 | 289.41 |
+| KV260 | IP (desde host) | 24.85 | 48.59 | 25.05 | 54.83 |
 
 ![Tiempo contra N](Resultados/graficas/tiempo_vs_N.png)
 
 ## Limitaciones
 
 - La **Jetson Nano 2GB no tiene sensor de potencia** (INA3221), por lo cual `tegrastats` no reporta `POM_5V_IN` y no se reporta energía de CPU ni GPU. No se llenó con estimaciones.
-- La energía de la KV260 se mide con su **INA260 (U14)**, que incluye todo el SOM (PS + PL + DDR). Se reporta también la potencia en reposo (~3.1 W).
+- La energía de la KV260 se mide con su **INA260 (U14)**, que incluye todo el SOM (PS + PL + DDR). Se reporta también la potencia en reposo (3.15 W). FP32 medido en `kria-85`; FP16 y FP32 medidos en `kria-85`.

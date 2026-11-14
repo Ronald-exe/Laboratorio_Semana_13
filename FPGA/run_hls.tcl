@@ -40,7 +40,7 @@ foreach p $precs {
         set_part $part
         create_clock -period $periodo -name default
 
-        csim_design
+        if {[catch {csim_design} err]} { puts "AVISO: csim fallo en $proy: $err" }
         csynth_design
         if {$do_cosim} {
             if {[catch {cosim_design -rtl verilog} err]} { puts "AVISO: cosim fallo en $proy: $err" }

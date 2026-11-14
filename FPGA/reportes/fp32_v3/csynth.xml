@@ -1,0 +1,2790 @@
+<profile>
+    <ReportVersion>
+        <Version>2026.1</Version>
+    </ReportVersion>
+    <UserAssignments>
+        <unit>ns</unit>
+        <ProductFamily>zynquplus</ProductFamily>
+        <Part>xck26-sfvc784-2LV-c</Part>
+        <TopModelName>softmax_hls</TopModelName>
+        <TargetClockPeriod>10.00</TargetClockPeriod>
+        <ClockUncertainty>2.70</ClockUncertainty>
+    </UserAssignments>
+    <PerformanceEstimates>
+        <PipelineType>no</PipelineType>
+        <SummaryOfTimingAnalysis>
+            <unit>ns</unit>
+            <EstimatedClockPeriod>25.733</EstimatedClockPeriod>
+        </SummaryOfTimingAnalysis>
+        <SummaryOfOverallLatency>
+            <unit>clock cycles</unit>
+            <Best-caseLatency>1</Best-caseLatency>
+            <Average-caseLatency>647</Average-caseLatency>
+            <Worst-caseLatency>2468</Worst-caseLatency>
+            <Best-caseRealTimeLatency>25.733 ns</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>16.649 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>63.509 us</Worst-caseRealTimeLatency>
+            <Interval-min>2</Interval-min>
+            <Interval-max>2469</Interval-max>
+            <PerformancePragma>-</PerformancePragma>
+        </SummaryOfOverallLatency>
+        <SummaryOfViolations>
+            <IssueType>-</IssueType>
+            <ViolationType>-</ViolationType>
+            <SourceLocation>softmax_hls.cpp:229</SourceLocation>
+        </SummaryOfViolations>
+    </PerformanceEstimates>
+    <AreaEstimates>
+        <Resources>
+            <BRAM_18K>34</BRAM_18K>
+            <DSP>112</DSP>
+            <FF>14457</FF>
+            <LUT>17482</LUT>
+            <URAM>0</URAM>
+        </Resources>
+        <AvailableResources>
+            <BRAM_18K>288</BRAM_18K>
+            <DSP>1248</DSP>
+            <FF>234240</FF>
+            <LUT>117120</LUT>
+            <URAM>64</URAM>
+        </AvailableResources>
+    </AreaEstimates>
+    <InterfaceSummary>
+        <RtlPorts>
+            <name>s_axi_control_AWVALID</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_AWREADY</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_AWADDR</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>6</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_WVALID</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_WREADY</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_WDATA</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_WSTRB</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_ARVALID</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_ARREADY</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_ARADDR</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>6</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_RVALID</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_RREADY</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_RDATA</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_RRESP</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_BVALID</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_BREADY</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_BRESP</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_clk</name>
+            <Object>softmax_hls</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_rst_n</name>
+            <Object>softmax_hls</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>interrupt</name>
+            <Object>softmax_hls</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_AWVALID</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_AWREADY</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_AWADDR</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>64</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_AWID</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_AWLEN</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_AWSIZE</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>3</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_AWBURST</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_AWLOCK</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_AWCACHE</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_AWPROT</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>3</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_AWQOS</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_AWREGION</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_AWUSER</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_WVALID</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_WREADY</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_WDATA</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_WSTRB</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_WLAST</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_WID</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_WUSER</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_ARVALID</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_ARREADY</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_ARADDR</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>64</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_ARID</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_ARLEN</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_ARSIZE</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>3</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_ARBURST</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_ARLOCK</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_ARCACHE</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_ARPROT</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>3</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_ARQOS</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_ARREGION</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_ARUSER</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_RVALID</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_RREADY</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_RDATA</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_RLAST</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_RID</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_RUSER</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_RRESP</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_BVALID</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_BREADY</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_BRESP</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_BID</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem0_BUSER</name>
+            <Object>gmem0</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_AWVALID</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_AWREADY</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_AWADDR</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>64</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_AWID</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_AWLEN</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_AWSIZE</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>3</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_AWBURST</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_AWLOCK</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_AWCACHE</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_AWPROT</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>3</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_AWQOS</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_AWREGION</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_AWUSER</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_WVALID</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_WREADY</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_WDATA</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_WSTRB</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_WLAST</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_WID</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_WUSER</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_ARVALID</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_ARREADY</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_ARADDR</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>64</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_ARID</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_ARLEN</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_ARSIZE</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>3</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_ARBURST</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_ARLOCK</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_ARCACHE</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_ARPROT</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>3</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_ARQOS</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_ARREGION</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_ARUSER</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_RVALID</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_RREADY</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_RDATA</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_RLAST</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_RID</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_RUSER</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_RRESP</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_BVALID</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_BREADY</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_BRESP</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_BID</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_gmem1_BUSER</name>
+            <Object>gmem1</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+    </InterfaceSummary>
+    <RTLDesignHierarchy>
+        <TopModule MAX_DEPTH="5">
+            <ModuleName>softmax_hls</ModuleName>
+            <InstancesList>
+                <Instance>
+                    <InstName>grp_softmax_etapas_fu_80</InstName>
+                    <ModuleName>softmax_etapas</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>80</ID>
+                    <InstancesList>
+                        <Instance>
+                            <InstName>leer_U0</InstName>
+                            <ModuleName>leer</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>206</ID>
+                            <InstancesList>
+                                <Instance>
+                                    <InstName>grp_leer_Pipeline_LEER_fu_96</InstName>
+                                    <ModuleName>leer_Pipeline_LEER</ModuleName>
+                                    <IsCompInst>true</IsCompInst>
+                                    <ID>96</ID>
+                                    <BindInstances>icmp_ln101_fu_353_p2 add_ln101_fu_359_p2</BindInstances>
+                                </Instance>
+                            </InstancesList>
+                        </Instance>
+                        <Instance>
+                            <InstName>maximo_U0</InstName>
+                            <ModuleName>maximo</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>248</ID>
+                            <InstancesList>
+                                <Instance>
+                                    <InstName>grp_maximo_Pipeline_MAXIMO_fu_56</InstName>
+                                    <ModuleName>maximo_Pipeline_MAXIMO</ModuleName>
+                                    <IsCompInst>true</IsCompInst>
+                                    <ID>56</ID>
+                                    <BindInstances>icmp_ln116_fu_281_p2 icmp_ln124_fu_327_p2 grp_fu_240_p1 icmp_ln124_1_fu_351_p2 grp_fu_244_p1 icmp_ln124_2_fu_365_p2 grp_fu_248_p1 icmp_ln124_3_fu_379_p2 grp_fu_235_p0 icmp_ln124_4_fu_405_p2 grp_fu_240_p0 icmp_ln124_5_fu_419_p2 grp_fu_244_p0 icmp_ln124_6_fu_433_p2 grp_fu_248_p0 icmp_ln130_fu_533_p2 icmp_ln130_1_fu_539_p2 or_ln130_fu_545_p2 icmp_ln130_2_fu_551_p2 icmp_ln130_3_fu_557_p2 or_ln130_1_fu_563_p2 and_ln130_fu_569_p2 fcmp_32ns_32ns_1_2_no_dsp_1_U39 and_ln130_1_fu_575_p2 select_ln130_fu_581_p3 icmp_ln130_4_fu_622_p2 icmp_ln130_5_fu_628_p2 or_ln130_2_fu_634_p2 icmp_ln130_6_fu_640_p2 icmp_ln130_7_fu_646_p2 or_ln130_3_fu_652_p2 and_ln130_2_fu_658_p2 fcmp_32ns_32ns_1_2_no_dsp_1_U40 and_ln130_3_fu_664_p2 select_ln130_1_fu_670_p3 icmp_ln130_8_fu_711_p2 icmp_ln130_9_fu_717_p2 or_ln130_4_fu_723_p2 icmp_ln130_10_fu_729_p2 icmp_ln130_11_fu_735_p2 or_ln130_5_fu_741_p2 and_ln130_4_fu_747_p2 fcmp_32ns_32ns_1_2_no_dsp_1_U41 and_ln130_5_fu_753_p2 select_ln130_2_fu_759_p3 icmp_ln130_12_fu_800_p2 icmp_ln130_13_fu_806_p2 or_ln130_6_fu_812_p2 icmp_ln130_14_fu_818_p2 icmp_ln130_15_fu_824_p2 or_ln130_7_fu_830_p2 and_ln130_6_fu_836_p2 fcmp_32ns_32ns_1_2_no_dsp_1_U42 and_ln130_7_fu_842_p2 select_ln130_3_fu_848_p3 icmp_ln130_16_fu_889_p2 icmp_ln130_17_fu_895_p2 or_ln130_8_fu_901_p2 icmp_ln130_18_fu_907_p2 icmp_ln130_19_fu_913_p2 or_ln130_9_fu_919_p2 and_ln130_8_fu_925_p2 fcmp_32ns_32ns_1_2_no_dsp_1_U43 and_ln130_9_fu_931_p2 select_ln130_4_fu_937_p3 icmp_ln130_20_fu_978_p2 icmp_ln130_21_fu_984_p2 or_ln130_10_fu_990_p2 icmp_ln130_22_fu_996_p2 icmp_ln130_23_fu_1002_p2 or_ln130_11_fu_1008_p2 and_ln130_10_fu_1014_p2 fcmp_32ns_32ns_1_2_no_dsp_1_U44 and_ln130_11_fu_1020_p2 select_ln130_5_fu_1026_p3 icmp_ln130_24_fu_1071_p2 icmp_ln130_25_fu_1077_p2 or_ln130_12_fu_1083_p2 icmp_ln130_26_fu_1089_p2 icmp_ln130_27_fu_1095_p2 or_ln130_13_fu_1101_p2 and_ln130_12_fu_1107_p2 fcmp_32ns_32ns_1_2_no_dsp_1_U45 and_ln130_13_fu_1113_p2 m_2_fu_1119_p3 icmp_ln133_fu_1160_p2 icmp_ln133_1_fu_1166_p2 or_ln133_fu_1172_p2 icmp_ln133_2_fu_1178_p2 icmp_ln133_3_fu_1184_p2 or_ln133_1_fu_1190_p2 fcmp_32ns_32ns_1_2_no_dsp_1_U46 and_ln133_fu_1196_p2 and_ln133_1_fu_1202_p2 m_3_fu_1208_p3 add_ln116_fu_439_p2</BindInstances>
+                                </Instance>
+                            </InstancesList>
+                        </Instance>
+                        <Instance>
+                            <InstName>exp_suma_U0</InstName>
+                            <ModuleName>exp_suma</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>261</ID>
+                            <InstancesList>
+                                <Instance>
+                                    <InstName>grp_exp_suma_Pipeline_EXP_SUMA_fu_68</InstName>
+                                    <ModuleName>exp_suma_Pipeline_EXP_SUMA</ModuleName>
+                                    <IsCompInst>true</IsCompInst>
+                                    <ID>68</ID>
+                                    <BindInstances>icmp_ln143_fu_575_p2 icmp_ln157_fu_621_p2 fsub_32ns_32ns_32_4_full_dsp_1_U69 fexp_32ns_32ns_32_8_full_dsp_1_U85 grp_fu_464_p0 icmp_ln157_1_fu_645_p2 fsub_32ns_32ns_32_4_full_dsp_1_U70 fexp_32ns_32ns_32_8_full_dsp_1_U86 grp_fu_468_p0 icmp_ln157_2_fu_659_p2 fsub_32ns_32ns_32_4_full_dsp_1_U71 fexp_32ns_32ns_32_8_full_dsp_1_U87 grp_fu_472_p0 icmp_ln157_3_fu_673_p2 fsub_32ns_32ns_32_4_full_dsp_1_U72 fexp_32ns_32ns_32_8_full_dsp_1_U88 grp_fu_460_p1 icmp_ln157_4_fu_699_p2 fsub_32ns_32ns_32_4_full_dsp_1_U73 fexp_32ns_32ns_32_8_full_dsp_1_U89 grp_fu_464_p1 icmp_ln157_5_fu_713_p2 fsub_32ns_32ns_32_4_full_dsp_1_U74 fexp_32ns_32ns_32_8_full_dsp_1_U90 grp_fu_468_p1 icmp_ln157_6_fu_727_p2 fsub_32ns_32ns_32_4_full_dsp_1_U75 fexp_32ns_32ns_32_8_full_dsp_1_U91 grp_fu_472_p1 fadd_32ns_32ns_32_4_full_dsp_1_U76 fadd_32ns_32ns_32_4_full_dsp_1_U77 fadd_32ns_32ns_32_4_full_dsp_1_U78 fadd_32ns_32ns_32_4_full_dsp_1_U79 fadd_32ns_32ns_32_4_full_dsp_1_U80 fadd_32ns_32ns_32_4_full_dsp_1_U81 fadd_32ns_32ns_32_4_full_dsp_1_U82 fadd_32ns_32ns_32_2_full_dsp_1_U83 add_ln143_fu_733_p2</BindInstances>
+                                </Instance>
+                            </InstancesList>
+                            <BindInstances>fsub_32ns_32ns_32_4_full_dsp_1_U116 fexp_32ns_32ns_32_8_full_dsp_1_U117</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>normalizar_U0</InstName>
+                            <ModuleName>normalizar</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>283</ID>
+                            <InstancesList>
+                                <Instance>
+                                    <InstName>grp_normalizar_Pipeline_NORMALIZA_fu_62</InstName>
+                                    <ModuleName>normalizar_Pipeline_NORMALIZA</ModuleName>
+                                    <IsCompInst>true</IsCompInst>
+                                    <ID>62</ID>
+                                    <BindInstances>icmp_ln179_fu_370_p2 fmul_32ns_32ns_32_3_max_dsp_1_U138 icmp_ln185_fu_416_p2 fmul_32ns_32ns_32_3_max_dsp_1_U139 icmp_ln185_1_fu_440_p2 fmul_32ns_32ns_32_3_max_dsp_1_U140 icmp_ln185_2_fu_454_p2 fmul_32ns_32ns_32_3_max_dsp_1_U141 icmp_ln185_3_fu_468_p2 fmul_32ns_32ns_32_3_max_dsp_1_U142 icmp_ln185_4_fu_494_p2 fmul_32ns_32ns_32_3_max_dsp_1_U143 icmp_ln185_5_fu_508_p2 fmul_32ns_32ns_32_3_max_dsp_1_U144 icmp_ln185_6_fu_522_p2 fmul_32ns_32ns_32_3_max_dsp_1_U145 add_ln179_fu_528_p2</BindInstances>
+                                </Instance>
+                            </InstancesList>
+                            <BindInstances>fdiv_32ns_32ns_32_9_no_dsp_1_U165</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>escribir_U0</InstName>
+                            <ModuleName>escribir</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>305</ID>
+                            <InstancesList>
+                                <Instance>
+                                    <InstName>grp_escribir_Pipeline_ESCRIBIR_fu_87</InstName>
+                                    <ModuleName>escribir_Pipeline_ESCRIBIR</ModuleName>
+                                    <IsCompInst>true</IsCompInst>
+                                    <ID>87</ID>
+                                    <BindInstances>icmp_ln193_fu_244_p2 add_ln193_fu_250_p2 sparsemux_17_3_32_1_1_U185</BindInstances>
+                                </Instance>
+                            </InstancesList>
+                        </Instance>
+                    </InstancesList>
+                    <BindInstances>xa_U xa_1_U xa_2_U xa_3_U xa_4_U xa_5_U xa_6_U xa_7_U xb_U xb_1_U xb_2_U xb_3_U xb_4_U xb_5_U xb_6_U xb_7_U m_U t_U t_1_U t_2_U t_3_U t_4_U t_5_U t_6_U t_7_U s_U yb_U yb_1_U yb_2_U yb_3_U yb_4_U yb_5_U yb_6_U yb_7_U</BindInstances>
+                </Instance>
+            </InstancesList>
+            <BindInstances>icmp_ln238_fu_95_p2 icmp_ln239_fu_101_p2 select_ln239_fu_107_p3 control_s_axi_U gmem0_m_axi_U gmem1_m_axi_U</BindInstances>
+        </TopModule>
+    </RTLDesignHierarchy>
+    <ModuleInformation>
+        <Module>
+            <Name>leer_Pipeline_LEER</Name>
+            <Loops>
+                <LEER/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>13</Best-caseLatency>
+                    <Average-caseLatency>508</Average-caseLatency>
+                    <Worst-caseLatency>1003</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.335 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>13.072 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>25.810 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>11 ~ 1001</PipelineInitiationInterval>
+                    <PipelineType>loop pipeline stp</PipelineType>
+                    <PerformancePragma>-</PerformancePragma>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <LEER>
+                        <Name>LEER</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>
+                            <range>
+                                <min>10</min>
+                                <max>1000</max>
+                            </range>
+                        </TripCount>
+                        <isPerfectNested>0</isPerfectNested>
+                        <Latency>11 ~ 1001</Latency>
+                        <AbsoluteTimeLatency>0.283 us ~ 25.759 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>3</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <PerformancePragma>-</PerformancePragma>
+                        <InstanceList/>
+                    </LEER>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>softmax_hls.cpp:101</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <LEER>
+                            <Name>LEER</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>softmax_hls.cpp:101</SourceLocation>
+                        </LEER>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>68</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>83</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="LEER" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln101_fu_353_p2" SOURCE="softmax_hls.cpp:101" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln101" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LEER" OPTYPE="add" PRAGMA="" RTLNAME="add_ln101_fu_359_p2" SOURCE="softmax_hls.cpp:101" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln101" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>leer</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>22</Best-caseLatency>
+                    <Average-caseLatency>517</Average-caseLatency>
+                    <Worst-caseLatency>1012</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.566 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>13.304 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>26.042 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>22 ~ 1012</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                    <PerformancePragma>-</PerformancePragma>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>softmax_hls.cpp:101</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>152</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>294</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+        </Module>
+        <Module>
+            <Name>maximo_Pipeline_MAXIMO</Name>
+            <Loops>
+                <MAXIMO/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>6.727</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>8</Best-caseLatency>
+                    <Average-caseLatency>69</Average-caseLatency>
+                    <Worst-caseLatency>131</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.206 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.776 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>3.371 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>3 ~ 126</PipelineInitiationInterval>
+                    <PipelineType>loop pipeline stp</PipelineType>
+                    <PerformancePragma>-</PerformancePragma>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <MAXIMO>
+                        <Name>MAXIMO</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>
+                            <range>
+                                <min>2</min>
+                                <max>125</max>
+                            </range>
+                        </TripCount>
+                        <isPerfectNested>0</isPerfectNested>
+                        <Latency>6 ~ 129</Latency>
+                        <AbsoluteTimeLatency>0.154 us ~ 3.320 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>6</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <PerformancePragma>-</PerformancePragma>
+                        <InstanceList/>
+                    </MAXIMO>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>softmax_hls.cpp:114</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <MAXIMO>
+                            <Name>MAXIMO</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>softmax_hls.cpp:116</SourceLocation>
+                        </MAXIMO>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>637</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>1505</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>1</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln116_fu_281_p2" SOURCE="softmax_hls.cpp:116" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln116" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln124_fu_327_p2" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln124" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_240_p1" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="empty" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln124_1_fu_351_p2" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln124_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_244_p1" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_26" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln124_2_fu_365_p2" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln124_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_248_p1" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_27" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln124_3_fu_379_p2" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln124_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_235_p0" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_28" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln124_4_fu_405_p2" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln124_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_240_p0" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_29" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln124_5_fu_419_p2" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln124_5" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_244_p0" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_30" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln124_6_fu_433_p2" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln124_6" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_248_p0" SOURCE="softmax_hls.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_31" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_fu_533_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_1_fu_539_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_fu_545_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_2_fu_551_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_3_fu_557_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_1_fu_563_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_fu_569_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fcmp" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="MAXIMO" OPTYPE="fcmp" PRAGMA="" RTLNAME="fcmp_32ns_32ns_1_2_no_dsp_1_U39" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_1_fu_575_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="select_ln130_fu_581_p3" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln130" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_4_fu_622_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_5_fu_628_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_5" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_2_fu_634_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_6_fu_640_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_6" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_7_fu_646_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_7" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_3_fu_652_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_2_fu_658_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fcmp" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="MAXIMO" OPTYPE="fcmp" PRAGMA="" RTLNAME="fcmp_32ns_32ns_1_2_no_dsp_1_U40" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_5" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_3_fu_664_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="select_ln130_1_fu_670_p3" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln130_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_8_fu_711_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_8" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_9_fu_717_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_9" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_4_fu_723_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_10_fu_729_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_10" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_11_fu_735_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_11" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_5_fu_741_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130_5" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_4_fu_747_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fcmp" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="MAXIMO" OPTYPE="fcmp" PRAGMA="" RTLNAME="fcmp_32ns_32ns_1_2_no_dsp_1_U41" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_8" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_5_fu_753_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130_5" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="select_ln130_2_fu_759_p3" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln130_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_12_fu_800_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_12" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_13_fu_806_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_13" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_6_fu_812_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130_6" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_14_fu_818_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_14" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_15_fu_824_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_15" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_7_fu_830_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130_7" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_6_fu_836_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130_6" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fcmp" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="MAXIMO" OPTYPE="fcmp" PRAGMA="" RTLNAME="fcmp_32ns_32ns_1_2_no_dsp_1_U42" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_10" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_7_fu_842_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130_7" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="select_ln130_3_fu_848_p3" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln130_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_16_fu_889_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_16" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_17_fu_895_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_17" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_8_fu_901_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130_8" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_18_fu_907_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_18" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_19_fu_913_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_19" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_9_fu_919_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130_9" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_8_fu_925_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130_8" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fcmp" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="MAXIMO" OPTYPE="fcmp" PRAGMA="" RTLNAME="fcmp_32ns_32ns_1_2_no_dsp_1_U43" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_13" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_9_fu_931_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130_9" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="select_ln130_4_fu_937_p3" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln130_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_20_fu_978_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_20" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_21_fu_984_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_21" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_10_fu_990_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130_10" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_22_fu_996_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_22" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_23_fu_1002_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_23" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_11_fu_1008_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130_11" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_10_fu_1014_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130_10" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fcmp" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="MAXIMO" OPTYPE="fcmp" PRAGMA="" RTLNAME="fcmp_32ns_32ns_1_2_no_dsp_1_U44" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_16" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_11_fu_1020_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130_11" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="select_ln130_5_fu_1026_p3" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln130_5" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_24_fu_1071_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_24" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_25_fu_1077_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_25" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_12_fu_1083_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130_12" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln130_26_fu_1089_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_26" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln130_27_fu_1095_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln130_27" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln130_13_fu_1101_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln130_13" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_12_fu_1107_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130_12" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fcmp" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="MAXIMO" OPTYPE="fcmp" PRAGMA="" RTLNAME="fcmp_32ns_32ns_1_2_no_dsp_1_U45" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_19" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln130_13_fu_1113_p2" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln130_13" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="m_2_fu_1119_p3" SOURCE="softmax_hls.cpp:130" STORAGESUBTYPE="" URAM="0" VARIABLE="m_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln133_fu_1160_p2" SOURCE="softmax_hls.cpp:133" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln133" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln133_1_fu_1166_p2" SOURCE="softmax_hls.cpp:133" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln133_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln133_fu_1172_p2" SOURCE="softmax_hls.cpp:133" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln133" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln133_2_fu_1178_p2" SOURCE="softmax_hls.cpp:133" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln133_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln133_3_fu_1184_p2" SOURCE="softmax_hls.cpp:133" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln133_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="or" PRAGMA="" RTLNAME="or_ln133_1_fu_1190_p2" SOURCE="softmax_hls.cpp:133" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln133_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fcmp" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="MAXIMO" OPTYPE="fcmp" PRAGMA="" RTLNAME="fcmp_32ns_32ns_1_2_no_dsp_1_U46" SOURCE="softmax_hls.cpp:133" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_22" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln133_fu_1196_p2" SOURCE="softmax_hls.cpp:133" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln133" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MAXIMO" OPTYPE="and" PRAGMA="" RTLNAME="and_ln133_1_fu_1202_p2" SOURCE="softmax_hls.cpp:133" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln133_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MAXIMO" OPTYPE="select" PRAGMA="" RTLNAME="m_3_fu_1208_p3" SOURCE="softmax_hls.cpp:133" STORAGESUBTYPE="" URAM="0" VARIABLE="m_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MAXIMO" OPTYPE="add" PRAGMA="" RTLNAME="add_ln116_fu_439_p2" SOURCE="softmax_hls.cpp:116" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln116" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>maximo</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>6.727</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>12</Best-caseLatency>
+                    <Average-caseLatency>73</Average-caseLatency>
+                    <Worst-caseLatency>135</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.309 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.879 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>3.474 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>12 ~ 135</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                    <PerformancePragma>-</PerformancePragma>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>softmax_hls.cpp:114</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>686</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>1565</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>1</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+        </Module>
+        <Module>
+            <Name>exp_suma_Pipeline_EXP_SUMA</Name>
+            <Loops>
+                <EXP_SUMA/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>25.733</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>25</Best-caseLatency>
+                    <Average-caseLatency>86</Average-caseLatency>
+                    <Worst-caseLatency>148</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.643 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>2.213 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>3.808 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>3 ~ 126</PipelineInitiationInterval>
+                    <PipelineType>loop pipeline stp</PipelineType>
+                    <PerformancePragma>-</PerformancePragma>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <EXP_SUMA>
+                        <Name>EXP_SUMA</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>
+                            <range>
+                                <min>2</min>
+                                <max>125</max>
+                            </range>
+                        </TripCount>
+                        <isPerfectNested>0</isPerfectNested>
+                        <Latency>23 ~ 146</Latency>
+                        <AbsoluteTimeLatency>0.592 us ~ 3.757 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>23</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <PerformancePragma>-</PerformancePragma>
+                        <InstanceList/>
+                    </EXP_SUMA>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>Timing Violation</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>softmax_hls.cpp:141~softmax_hls.cpp:220</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <EXP_SUMA>
+                            <Name>EXP_SUMA</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>softmax_hls.cpp:143~softmax_hls.cpp:220</SourceLocation>
+                        </EXP_SUMA>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <DSP>79</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>6</UTIL_DSP>
+                    <FF>8797</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>3</UTIL_FF>
+                    <LUT>10374</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>8</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln143_fu_575_p2" SOURCE="softmax_hls.cpp:143" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln143" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln157_fu_621_p2" SOURCE="softmax_hls.cpp:157" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln157" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U69" SOURCE="softmax_hls.cpp:158" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_127_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fexp" DSP="7" ID="" IMPL="fulldsp" LATENCY="7" LOOP="EXP_SUMA" OPTYPE="fexp" PRAGMA="" RTLNAME="fexp_32ns_32ns_32_8_full_dsp_1_U85" SOURCE="C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib\hlsmath\src\common\hls_exp_float.cpp:17" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_2" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_464_p0" SOURCE="softmax_hls.cpp:160" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln160" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln157_1_fu_645_p2" SOURCE="softmax_hls.cpp:157" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln157_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U70" SOURCE="softmax_hls.cpp:158" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_228_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fexp" DSP="7" ID="" IMPL="fulldsp" LATENCY="7" LOOP="EXP_SUMA" OPTYPE="fexp" PRAGMA="" RTLNAME="fexp_32ns_32ns_32_8_full_dsp_1_U86" SOURCE="C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib\hlsmath\src\common\hls_exp_float.cpp:17" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_468_p0" SOURCE="softmax_hls.cpp:160" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln160_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln157_2_fu_659_p2" SOURCE="softmax_hls.cpp:157" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln157_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U71" SOURCE="softmax_hls.cpp:158" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_329_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fexp" DSP="7" ID="" IMPL="fulldsp" LATENCY="7" LOOP="EXP_SUMA" OPTYPE="fexp" PRAGMA="" RTLNAME="fexp_32ns_32ns_32_8_full_dsp_1_U87" SOURCE="C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib\hlsmath\src\common\hls_exp_float.cpp:17" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_3" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_472_p0" SOURCE="softmax_hls.cpp:160" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln160_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln157_3_fu_673_p2" SOURCE="softmax_hls.cpp:157" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln157_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U72" SOURCE="softmax_hls.cpp:158" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_430_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fexp" DSP="7" ID="" IMPL="fulldsp" LATENCY="7" LOOP="EXP_SUMA" OPTYPE="fexp" PRAGMA="" RTLNAME="fexp_32ns_32ns_32_8_full_dsp_1_U88" SOURCE="C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib\hlsmath\src\common\hls_exp_float.cpp:17" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_4" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_460_p1" SOURCE="softmax_hls.cpp:160" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln160_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln157_4_fu_699_p2" SOURCE="softmax_hls.cpp:157" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln157_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U73" SOURCE="softmax_hls.cpp:158" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_531_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fexp" DSP="7" ID="" IMPL="fulldsp" LATENCY="7" LOOP="EXP_SUMA" OPTYPE="fexp" PRAGMA="" RTLNAME="fexp_32ns_32ns_32_8_full_dsp_1_U89" SOURCE="C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib\hlsmath\src\common\hls_exp_float.cpp:17" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_5" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_464_p1" SOURCE="softmax_hls.cpp:160" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln160_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln157_5_fu_713_p2" SOURCE="softmax_hls.cpp:157" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln157_5" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U74" SOURCE="softmax_hls.cpp:158" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_632_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fexp" DSP="7" ID="" IMPL="fulldsp" LATENCY="7" LOOP="EXP_SUMA" OPTYPE="fexp" PRAGMA="" RTLNAME="fexp_32ns_32ns_32_8_full_dsp_1_U90" SOURCE="C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib\hlsmath\src\common\hls_exp_float.cpp:17" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_6" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_468_p1" SOURCE="softmax_hls.cpp:160" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln160_5" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln157_6_fu_727_p2" SOURCE="softmax_hls.cpp:157" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln157_6" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U75" SOURCE="softmax_hls.cpp:158" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_733_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fexp" DSP="7" ID="" IMPL="fulldsp" LATENCY="7" LOOP="EXP_SUMA" OPTYPE="fexp" PRAGMA="" RTLNAME="fexp_32ns_32ns_32_8_full_dsp_1_U91" SOURCE="C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib\hlsmath\src\common\hls_exp_float.cpp:17" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp_7" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="select" PRAGMA="" RTLNAME="grp_fu_472_p1" SOURCE="softmax_hls.cpp:160" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln160_6" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_4_full_dsp_1_U76" SOURCE="softmax_hls.cpp:166" STORAGESUBTYPE="" URAM="0" VARIABLE="add30_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_4_full_dsp_1_U77" SOURCE="softmax_hls.cpp:166" STORAGESUBTYPE="" URAM="0" VARIABLE="add30_112_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_4_full_dsp_1_U78" SOURCE="softmax_hls.cpp:166" STORAGESUBTYPE="" URAM="0" VARIABLE="add30_217_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_4_full_dsp_1_U79" SOURCE="softmax_hls.cpp:166" STORAGESUBTYPE="" URAM="0" VARIABLE="add30_3_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_4_full_dsp_1_U80" SOURCE="softmax_hls.cpp:166" STORAGESUBTYPE="" URAM="0" VARIABLE="add30_1_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_4_full_dsp_1_U81" SOURCE="softmax_hls.cpp:166" STORAGESUBTYPE="" URAM="0" VARIABLE="add30_1_1_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="EXP_SUMA" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_4_full_dsp_1_U82" SOURCE="softmax_hls.cpp:166" STORAGESUBTYPE="" URAM="0" VARIABLE="add30_2_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="1" LOOP="EXP_SUMA" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_2_full_dsp_1_U83" SOURCE="softmax_hls.cpp:169" STORAGESUBTYPE="" URAM="0" VARIABLE="s" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="EXP_SUMA" OPTYPE="add" PRAGMA="" RTLNAME="add_ln143_fu_733_p2" SOURCE="softmax_hls.cpp:143" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln143" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>exp_suma</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>25.733</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>40</Best-caseLatency>
+                    <Average-caseLatency>101</Average-caseLatency>
+                    <Worst-caseLatency>163</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>1.029 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>2.599 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>4.194 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>40 ~ 163</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                    <PerformancePragma>-</PerformancePragma>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>softmax_hls.cpp:158~softmax_hls.cpp:220</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <DSP>88</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>7</UTIL_DSP>
+                    <FF>9472</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>4</UTIL_FF>
+                    <LUT>11645</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>9</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U116" SOURCE="softmax_hls.cpp:158" STORAGESUBTYPE="" URAM="0" VARIABLE="v_assign_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fexp" DSP="7" ID="" IMPL="fulldsp" LATENCY="7" LOOP="" OPTYPE="fexp" PRAGMA="" RTLNAME="fexp_32ns_32ns_32_8_full_dsp_1_U117" SOURCE="C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib\hlsmath\src\common\hls_exp_float.cpp:17" STORAGESUBTYPE="" URAM="0" VARIABLE="e_1" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>normalizar_Pipeline_NORMALIZA</Name>
+            <Loops>
+                <NORMALIZA/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.016</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>8</Best-caseLatency>
+                    <Average-caseLatency>69</Average-caseLatency>
+                    <Worst-caseLatency>131</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.206 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.776 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>3.371 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>3 ~ 126</PipelineInitiationInterval>
+                    <PipelineType>loop pipeline stp</PipelineType>
+                    <PerformancePragma>-</PerformancePragma>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <NORMALIZA>
+                        <Name>NORMALIZA</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>
+                            <range>
+                                <min>2</min>
+                                <max>125</max>
+                            </range>
+                        </TripCount>
+                        <isPerfectNested>0</isPerfectNested>
+                        <Latency>6 ~ 129</Latency>
+                        <AbsoluteTimeLatency>0.154 us ~ 3.320 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>6</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <PerformancePragma>-</PerformancePragma>
+                        <InstanceList/>
+                    </NORMALIZA>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>softmax_hls.cpp:184~softmax_hls.cpp:221</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <NORMALIZA>
+                            <Name>NORMALIZA</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>softmax_hls.cpp:179~softmax_hls.cpp:221</SourceLocation>
+                        </NORMALIZA>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <DSP>24</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>1</UTIL_DSP>
+                    <FF>2083</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>1527</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>1</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="NORMALIZA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln179_fu_370_p2" SOURCE="softmax_hls.cpp:179" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln179" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="2" LOOP="NORMALIZA" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_3_max_dsp_1_U138" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="NORMALIZA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln185_fu_416_p2" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln185" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="2" LOOP="NORMALIZA" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_3_max_dsp_1_U139" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_1_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="NORMALIZA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln185_1_fu_440_p2" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln185_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="2" LOOP="NORMALIZA" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_3_max_dsp_1_U140" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_2_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="NORMALIZA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln185_2_fu_454_p2" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln185_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="2" LOOP="NORMALIZA" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_3_max_dsp_1_U141" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_3_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="NORMALIZA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln185_3_fu_468_p2" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln185_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="2" LOOP="NORMALIZA" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_3_max_dsp_1_U142" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_4_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="NORMALIZA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln185_4_fu_494_p2" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln185_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="2" LOOP="NORMALIZA" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_3_max_dsp_1_U143" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_5_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="NORMALIZA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln185_5_fu_508_p2" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln185_5" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="2" LOOP="NORMALIZA" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_3_max_dsp_1_U144" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_6_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="NORMALIZA" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln185_6_fu_522_p2" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln185_6" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="2" LOOP="NORMALIZA" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_3_max_dsp_1_U145" SOURCE="softmax_hls.cpp:185" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_7_i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="NORMALIZA" OPTYPE="add" PRAGMA="" RTLNAME="add_ln179_fu_528_p2" SOURCE="softmax_hls.cpp:179" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln179" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>normalizar</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.057</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>19</Best-caseLatency>
+                    <Average-caseLatency>80</Average-caseLatency>
+                    <Worst-caseLatency>142</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.489 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>2.059 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>3.654 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>19 ~ 142</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                    <PerformancePragma>-</PerformancePragma>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>softmax_hls.cpp:221</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <DSP>24</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>1</UTIL_DSP>
+                    <FF>2171</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>1603</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>1</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op fdiv" DSP="0" ID="" IMPL="fabric" LATENCY="8" LOOP="" OPTYPE="fdiv" PRAGMA="" RTLNAME="fdiv_32ns_32ns_32_9_no_dsp_1_U165" SOURCE="softmax_hls.cpp:177" STORAGESUBTYPE="" URAM="0" VARIABLE="inv" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>escribir_Pipeline_ESCRIBIR</Name>
+            <Loops>
+                <ESCRIBIR/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>13</Best-caseLatency>
+                    <Average-caseLatency>508</Average-caseLatency>
+                    <Worst-caseLatency>1003</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.335 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>13.072 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>25.810 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>11 ~ 1001</PipelineInitiationInterval>
+                    <PipelineType>loop pipeline stp</PipelineType>
+                    <PerformancePragma>-</PerformancePragma>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <ESCRIBIR>
+                        <Name>ESCRIBIR</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>
+                            <range>
+                                <min>10</min>
+                                <max>1000</max>
+                            </range>
+                        </TripCount>
+                        <isPerfectNested>0</isPerfectNested>
+                        <Latency>11 ~ 1001</Latency>
+                        <AbsoluteTimeLatency>0.283 us ~ 25.759 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>3</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <PerformancePragma>-</PerformancePragma>
+                        <InstanceList/>
+                    </ESCRIBIR>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>softmax_hls.cpp:193</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <ESCRIBIR>
+                            <Name>ESCRIBIR</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>softmax_hls.cpp:193</SourceLocation>
+                        </ESCRIBIR>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>50</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>126</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="ESCRIBIR" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln193_fu_244_p2" SOURCE="softmax_hls.cpp:193" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln193" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ESCRIBIR" OPTYPE="add" PRAGMA="" RTLNAME="add_ln193_fu_250_p2" SOURCE="softmax_hls.cpp:193" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln193" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op sparsemux" DSP="0" ID="" IMPL="compactencoding_dontcare" LATENCY="0" LOOP="ESCRIBIR" OPTYPE="sparsemux" PRAGMA="" RTLNAME="sparsemux_17_3_32_1_1_U185" SOURCE="softmax_hls.cpp:196" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp" VISIBLE="false"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>escribir</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>20</Best-caseLatency>
+                    <Average-caseLatency>515</Average-caseLatency>
+                    <Worst-caseLatency>1010</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.515 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>13.252 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>25.990 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>20 ~ 1010</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                    <PerformancePragma>-</PerformancePragma>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>softmax_hls.cpp:193</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>132</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>350</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+        </Module>
+        <Module>
+            <Name>softmax_etapas</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>25.733</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>117</Best-caseLatency>
+                    <Average-caseLatency>1290</Average-caseLatency>
+                    <Worst-caseLatency>2466</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>3.011 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>33.196 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>63.458 us</Worst-caseRealTimeLatency>
+                    <DataflowPipelineThroughput>
+                        <range>
+                            <min>41</min>
+                            <max>1013</max>
+                        </range>
+                    </DataflowPipelineThroughput>
+                    <PipelineInitiationInterval>41 ~ 1013</PipelineInitiationInterval>
+                    <PipelineType>dataflow</PipelineType>
+                    <PerformancePragma>-</PerformancePragma>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>Timing Violation</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>softmax_hls.cpp:205</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>32</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>11</UTIL_BRAM>
+                    <DSP>112</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>8</UTIL_DSP>
+                    <FF>12816</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>5</UTIL_FF>
+                    <LUT>15662</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>13</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDID="51539607568" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xa_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xa" VISIBLE="true"/>
+                <BindNode BINDID="51539607570" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xa_1_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xa_1" VISIBLE="true"/>
+                <BindNode BINDID="51539607572" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xa_2_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xa_2" VISIBLE="true"/>
+                <BindNode BINDID="51539607574" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xa_3_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xa_3" VISIBLE="true"/>
+                <BindNode BINDID="51539607576" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xa_4_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xa_4" VISIBLE="true"/>
+                <BindNode BINDID="51539607578" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xa_5_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xa_5" VISIBLE="true"/>
+                <BindNode BINDID="51539607580" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xa_6_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xa_6" VISIBLE="true"/>
+                <BindNode BINDID="51539607582" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xa_7_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xa_7" VISIBLE="true"/>
+                <BindNode BINDID="51539607584" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xb_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xb" VISIBLE="true"/>
+                <BindNode BINDID="51539607586" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xb_1_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xb_1" VISIBLE="true"/>
+                <BindNode BINDID="51539607588" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xb_2_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xb_2" VISIBLE="true"/>
+                <BindNode BINDID="51539607590" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xb_3_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xb_3" VISIBLE="true"/>
+                <BindNode BINDID="51539607592" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xb_4_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xb_4" VISIBLE="true"/>
+                <BindNode BINDID="51539607594" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xb_5_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xb_5" VISIBLE="true"/>
+                <BindNode BINDID="51539607596" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xb_6_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xb_6" VISIBLE="true"/>
+                <BindNode BINDID="51539607598" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="xb_7_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="xb_7" VISIBLE="true"/>
+                <BindNode BINDID="51539607633" BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="m_U" SOURCE="softmax_hls.cpp:219" STORAGESIZE="32 2 1" STORAGESUBTYPE="task level" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="m" VISIBLE="true"/>
+                <BindNode BINDID="51539607600" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="t_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="t" VISIBLE="true"/>
+                <BindNode BINDID="51539607602" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="t_1_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="t_1" VISIBLE="true"/>
+                <BindNode BINDID="51539607604" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="t_2_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="t_2" VISIBLE="true"/>
+                <BindNode BINDID="51539607606" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="t_3_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="t_3" VISIBLE="true"/>
+                <BindNode BINDID="51539607608" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="t_4_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="t_4" VISIBLE="true"/>
+                <BindNode BINDID="51539607610" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="t_5_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="t_5" VISIBLE="true"/>
+                <BindNode BINDID="51539607612" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="t_6_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="t_6" VISIBLE="true"/>
+                <BindNode BINDID="51539607614" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="t_7_U" SOURCE="softmax_hls.cpp:207" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="t_7" VISIBLE="true"/>
+                <BindNode BINDID="51539607634" BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="s_U" SOURCE="softmax_hls.cpp:220" STORAGESIZE="32 2 1" STORAGESUBTYPE="task level" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="s" VISIBLE="true"/>
+                <BindNode BINDID="51539607616" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="yb_U" SOURCE="softmax_hls.cpp:208" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="yb" VISIBLE="true"/>
+                <BindNode BINDID="51539607618" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="yb_1_U" SOURCE="softmax_hls.cpp:208" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="yb_1" VISIBLE="true"/>
+                <BindNode BINDID="51539607620" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="yb_2_U" SOURCE="softmax_hls.cpp:208" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="yb_2" VISIBLE="true"/>
+                <BindNode BINDID="51539607622" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="yb_3_U" SOURCE="softmax_hls.cpp:208" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="yb_3" VISIBLE="true"/>
+                <BindNode BINDID="51539607624" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="yb_4_U" SOURCE="softmax_hls.cpp:208" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="yb_4" VISIBLE="true"/>
+                <BindNode BINDID="51539607626" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="yb_5_U" SOURCE="softmax_hls.cpp:208" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="yb_5" VISIBLE="true"/>
+                <BindNode BINDID="51539607628" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="yb_6_U" SOURCE="softmax_hls.cpp:208" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="yb_6" VISIBLE="true"/>
+                <BindNode BINDID="51539607630" BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" CE_REG="N" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="yb_7_U" SOURCE="softmax_hls.cpp:208" STORAGESIZE="32 125 1" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="yb_7" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>softmax_hls</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>25.733</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>1</Best-caseLatency>
+                    <Average-caseLatency>647</Average-caseLatency>
+                    <Worst-caseLatency>2468</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>25.733 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>16.649 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>63.509 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>2 ~ 2469</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                    <PerformancePragma>-</PerformancePragma>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>softmax_hls.cpp:229</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>34</BRAM_18K>
+                    <AVAIL_BRAM>288</AVAIL_BRAM>
+                    <UTIL_BRAM>11</UTIL_BRAM>
+                    <DSP>112</DSP>
+                    <AVAIL_DSP>1248</AVAIL_DSP>
+                    <UTIL_DSP>8</UTIL_DSP>
+                    <FF>14457</FF>
+                    <AVAIL_FF>234240</AVAIL_FF>
+                    <UTIL_FF>6</UTIL_FF>
+                    <LUT>17482</LUT>
+                    <AVAIL_LUT>117120</AVAIL_LUT>
+                    <UTIL_LUT>14</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>64</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln238_fu_95_p2" SOURCE="softmax_hls.cpp:238" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln238" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln239_fu_101_p2" SOURCE="softmax_hls.cpp:239" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln239" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" CE_REG="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="select_ln239_fu_107_p3" SOURCE="softmax_hls.cpp:239" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln239" VISIBLE="false"/>
+                <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="control" CE_REG="" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="control_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
+                <BindNode BINDTYPE="adapter" BRAM="2" BUNDLEDNAME="gmem0" CE_REG="" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="gmem0_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
+                <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="gmem1" CE_REG="" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="gmem1_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
+            </BindNodes>
+        </Module>
+    </ModuleInformation>
+    <FIFOInformation/>
+    <UserConfigCommands>
+        <config_interface m_axi_alignment_size="1"/>
+        <config_rtl auto_prefix="1"/>
+    </UserConfigCommands>
+    <Args>
+        <Arg ArgName="x" index="0" direction="in" srcType="float const *" srcSize="32">
+            <hwRefs>
+                <hwRef type="interface" interface="m_axi_gmem0" name="" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="x_1" usage="address" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="x_2" usage="address" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="y" index="1" direction="out" srcType="float*" srcSize="32">
+            <hwRefs>
+                <hwRef type="interface" interface="m_axi_gmem1" name="" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="y_1" usage="address" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="y_2" usage="address" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="n" index="2" direction="in" srcType="int" srcSize="32">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_control" name="n" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+    </Args>
+    <Interfaces>
+        <Interface InterfaceName="s_axi_control" type="axi4lite" busTypeName="aximm" mode="slave" dataWidth="32" addrWidth="6" portPrefix="s_axi_control_" paramPrefix="C_S_AXI_CONTROL_" offsetMasterName="m_axi_gmem1">
+            <ports>
+                <port>s_axi_control_ARADDR</port>
+                <port>s_axi_control_ARREADY</port>
+                <port>s_axi_control_ARVALID</port>
+                <port>s_axi_control_AWADDR</port>
+                <port>s_axi_control_AWREADY</port>
+                <port>s_axi_control_AWVALID</port>
+                <port>s_axi_control_BREADY</port>
+                <port>s_axi_control_BRESP</port>
+                <port>s_axi_control_BVALID</port>
+                <port>s_axi_control_RDATA</port>
+                <port>s_axi_control_RREADY</port>
+                <port>s_axi_control_RRESP</port>
+                <port>s_axi_control_RVALID</port>
+                <port>s_axi_control_WDATA</port>
+                <port>s_axi_control_WREADY</port>
+                <port>s_axi_control_WSTRB</port>
+                <port>s_axi_control_WVALID</port>
+            </ports>
+            <registers>
+                <register offset="0x00" name="CTRL" access="RW" description="Control signals" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="AP_START" access="RW" description="Control signal Register for 'ap_start'."/>
+                        <field offset="1" width="1" name="AP_DONE" access="R" description="Control signal Register for 'ap_done'."/>
+                        <field offset="2" width="1" name="AP_IDLE" access="R" description="Control signal Register for 'ap_idle'."/>
+                        <field offset="3" width="1" name="AP_READY" access="R" description="Control signal Register for 'ap_ready'."/>
+                        <field offset="4" width="3" name="RESERVED_1" access="R" description="Reserved.  0s on read."/>
+                        <field offset="7" width="1" name="AUTO_RESTART" access="RW" description="Control signal Register for 'auto_restart'."/>
+                        <field offset="8" width="1" name="RESERVED_2" access="R" description="Reserved.  0s on read."/>
+                        <field offset="9" width="1" name="INTERRUPT" access="R" description="Control signal Register for 'interrupt'."/>
+                        <field offset="10" width="22" name="RESERVED_3" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x04" name="GIER" access="RW" description="Global Interrupt Enable Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="Enable" access="RW" description="Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"/>
+                        <field offset="1" width="31" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x08" name="IP_IER" access="RW" description="IP Interrupt Enable Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="CHAN0_INT_EN" access="RW" description="Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."/>
+                        <field offset="1" width="1" name="CHAN1_INT_EN" access="RW" description="Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."/>
+                        <field offset="2" width="30" name="RESERVED_0" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x0c" name="IP_ISR" access="RW" description="IP Interrupt Status Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="CHAN0_INT_ST" access="RTOW" description="Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt."/>
+                        <field offset="1" width="1" name="CHAN1_INT_ST" access="RTOW" description="Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt."/>
+                        <field offset="2" width="30" name="RESERVED_0" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x10" name="x_1" access="W" description="Data signal of x" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="x" access="W" description="Bit 31 to 0 of x"/>
+                    </fields>
+                </register>
+                <register offset="0x14" name="x_2" access="W" description="Data signal of x" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="x" access="W" description="Bit 63 to 32 of x"/>
+                    </fields>
+                </register>
+                <register offset="0x1c" name="y_1" access="W" description="Data signal of y" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="y" access="W" description="Bit 31 to 0 of y"/>
+                    </fields>
+                </register>
+                <register offset="0x20" name="y_2" access="W" description="Data signal of y" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="y" access="W" description="Bit 63 to 32 of y"/>
+                    </fields>
+                </register>
+                <register offset="0x28" name="n" access="W" description="Data signal of n" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="n" access="W" description="Bit 31 to 0 of n"/>
+                    </fields>
+                </register>
+            </registers>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="x"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="28" argName="y"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="40" argName="n"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
+            <busParams>
+                <busParam busParamName="ASSOCIATED_BUSIF">s_axi_control:m_axi_gmem0:m_axi_gmem1</busParam>
+                <busParam busParamName="ASSOCIATED_RESET">ap_rst_n</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_clk">CLK</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_clk</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_rst_n" type="reset" busTypeName="reset" mode="slave">
+            <busParams>
+                <busParam busParamName="POLARITY">ACTIVE_LOW</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_rst_n">RST</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_rst_n</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="interrupt" type="interrupt" busTypeName="interrupt" mode="master" dataWidth="1">
+            <busParams>
+                <busParam busParamName="SENSITIVITY">LEVEL_HIGH</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="interrupt">INTERRUPT</portMap>
+            </portMaps>
+            <ports>
+                <port>interrupt</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="m_axi_gmem0" type="axi4full" busTypeName="aximm" mode="master" dataWidth="32" addrWidth="64" portPrefix="m_axi_gmem0_" paramPrefix="C_M_AXI_GMEM0_" offsetSlaveName="s_axi_control" preferredUsageValue="MEMORY">
+            <busParams>
+                <busParam busParamName="NUM_READ_OUTSTANDING">16</busParam>
+                <busParam busParamName="NUM_WRITE_OUTSTANDING">16</busParam>
+                <busParam busParamName="MAX_READ_BURST_LENGTH">16</busParam>
+                <busParam busParamName="MAX_WRITE_BURST_LENGTH">16</busParam>
+                <busParam busParamName="MAX_BURST_LENGTH">256</busParam>
+                <busParam busParamName="PROTOCOL">AXI4</busParam>
+                <busParam busParamName="READ_WRITE_MODE">READ_ONLY</busParam>
+                <busParam busParamName="HAS_BURST">0</busParam>
+                <busParam busParamName="SUPPORTS_NARROW_BURST">0</busParam>
+            </busParams>
+            <ports>
+                <port>m_axi_gmem0_ARADDR</port>
+                <port>m_axi_gmem0_ARBURST</port>
+                <port>m_axi_gmem0_ARCACHE</port>
+                <port>m_axi_gmem0_ARID</port>
+                <port>m_axi_gmem0_ARLEN</port>
+                <port>m_axi_gmem0_ARLOCK</port>
+                <port>m_axi_gmem0_ARPROT</port>
+                <port>m_axi_gmem0_ARQOS</port>
+                <port>m_axi_gmem0_ARREADY</port>
+                <port>m_axi_gmem0_ARREGION</port>
+                <port>m_axi_gmem0_ARSIZE</port>
+                <port>m_axi_gmem0_ARUSER</port>
+                <port>m_axi_gmem0_ARVALID</port>
+                <port>m_axi_gmem0_AWADDR</port>
+                <port>m_axi_gmem0_AWBURST</port>
+                <port>m_axi_gmem0_AWCACHE</port>
+                <port>m_axi_gmem0_AWID</port>
+                <port>m_axi_gmem0_AWLEN</port>
+                <port>m_axi_gmem0_AWLOCK</port>
+                <port>m_axi_gmem0_AWPROT</port>
+                <port>m_axi_gmem0_AWQOS</port>
+                <port>m_axi_gmem0_AWREADY</port>
+                <port>m_axi_gmem0_AWREGION</port>
+                <port>m_axi_gmem0_AWSIZE</port>
+                <port>m_axi_gmem0_AWUSER</port>
+                <port>m_axi_gmem0_AWVALID</port>
+                <port>m_axi_gmem0_BID</port>
+                <port>m_axi_gmem0_BREADY</port>
+                <port>m_axi_gmem0_BRESP</port>
+                <port>m_axi_gmem0_BUSER</port>
+                <port>m_axi_gmem0_BVALID</port>
+                <port>m_axi_gmem0_RDATA</port>
+                <port>m_axi_gmem0_RID</port>
+                <port>m_axi_gmem0_RLAST</port>
+                <port>m_axi_gmem0_RREADY</port>
+                <port>m_axi_gmem0_RRESP</port>
+                <port>m_axi_gmem0_RUSER</port>
+                <port>m_axi_gmem0_RVALID</port>
+                <port>m_axi_gmem0_WDATA</port>
+                <port>m_axi_gmem0_WID</port>
+                <port>m_axi_gmem0_WLAST</port>
+                <port>m_axi_gmem0_WREADY</port>
+                <port>m_axi_gmem0_WSTRB</port>
+                <port>m_axi_gmem0_WUSER</port>
+                <port>m_axi_gmem0_WVALID</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="0" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="0" channel_id="0" argName="x"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="32" final_bitwidth="32" argName="x"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m_axi_gmem1" type="axi4full" busTypeName="aximm" mode="master" dataWidth="32" addrWidth="64" portPrefix="m_axi_gmem1_" paramPrefix="C_M_AXI_GMEM1_" offsetSlaveName="s_axi_control" preferredUsageValue="MEMORY">
+            <busParams>
+                <busParam busParamName="NUM_READ_OUTSTANDING">16</busParam>
+                <busParam busParamName="NUM_WRITE_OUTSTANDING">16</busParam>
+                <busParam busParamName="MAX_READ_BURST_LENGTH">16</busParam>
+                <busParam busParamName="MAX_WRITE_BURST_LENGTH">16</busParam>
+                <busParam busParamName="MAX_BURST_LENGTH">256</busParam>
+                <busParam busParamName="PROTOCOL">AXI4</busParam>
+                <busParam busParamName="READ_WRITE_MODE">WRITE_ONLY</busParam>
+                <busParam busParamName="HAS_BURST">0</busParam>
+                <busParam busParamName="SUPPORTS_NARROW_BURST">0</busParam>
+            </busParams>
+            <ports>
+                <port>m_axi_gmem1_ARADDR</port>
+                <port>m_axi_gmem1_ARBURST</port>
+                <port>m_axi_gmem1_ARCACHE</port>
+                <port>m_axi_gmem1_ARID</port>
+                <port>m_axi_gmem1_ARLEN</port>
+                <port>m_axi_gmem1_ARLOCK</port>
+                <port>m_axi_gmem1_ARPROT</port>
+                <port>m_axi_gmem1_ARQOS</port>
+                <port>m_axi_gmem1_ARREADY</port>
+                <port>m_axi_gmem1_ARREGION</port>
+                <port>m_axi_gmem1_ARSIZE</port>
+                <port>m_axi_gmem1_ARUSER</port>
+                <port>m_axi_gmem1_ARVALID</port>
+                <port>m_axi_gmem1_AWADDR</port>
+                <port>m_axi_gmem1_AWBURST</port>
+                <port>m_axi_gmem1_AWCACHE</port>
+                <port>m_axi_gmem1_AWID</port>
+                <port>m_axi_gmem1_AWLEN</port>
+                <port>m_axi_gmem1_AWLOCK</port>
+                <port>m_axi_gmem1_AWPROT</port>
+                <port>m_axi_gmem1_AWQOS</port>
+                <port>m_axi_gmem1_AWREADY</port>
+                <port>m_axi_gmem1_AWREGION</port>
+                <port>m_axi_gmem1_AWSIZE</port>
+                <port>m_axi_gmem1_AWUSER</port>
+                <port>m_axi_gmem1_AWVALID</port>
+                <port>m_axi_gmem1_BID</port>
+                <port>m_axi_gmem1_BREADY</port>
+                <port>m_axi_gmem1_BRESP</port>
+                <port>m_axi_gmem1_BUSER</port>
+                <port>m_axi_gmem1_BVALID</port>
+                <port>m_axi_gmem1_RDATA</port>
+                <port>m_axi_gmem1_RID</port>
+                <port>m_axi_gmem1_RLAST</port>
+                <port>m_axi_gmem1_RREADY</port>
+                <port>m_axi_gmem1_RRESP</port>
+                <port>m_axi_gmem1_RUSER</port>
+                <port>m_axi_gmem1_RVALID</port>
+                <port>m_axi_gmem1_WDATA</port>
+                <port>m_axi_gmem1_WID</port>
+                <port>m_axi_gmem1_WLAST</port>
+                <port>m_axi_gmem1_WREADY</port>
+                <port>m_axi_gmem1_WSTRB</port>
+                <port>m_axi_gmem1_WUSER</port>
+                <port>m_axi_gmem1_WVALID</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="0" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="0" channel_id="0" argName="y"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="32" final_bitwidth="32" argName="y"/>
+            </constraints>
+        </Interface>
+    </Interfaces>
+    <ReportHWInterface>
+        <section name="HW Interfaces" level="0">
+            <item name="M_AXI">
+                <table>
+                    <keys size="14">Interface, Read/Write, Data Width (SW-&gt;HW), Address Width, Latency, Offset, Offset Interfaces, Register, Max Widen Bitwidth, Max Read Burst Length, Max Write Burst Length, Num Read Outstanding, Num Write Outstanding, Resource Estimate</keys>
+                    <column name="m_axi_gmem0">READ_ONLY, 32 -&gt; 32, 64, 0, slave, s_axi_control, 0, 0, 16, 16, 16, 16, BRAM=2</column>
+                    <column name="m_axi_gmem1">WRITE_ONLY, 32 -&gt; 32, 64, 0, slave, s_axi_control, 0, 0, 16, 16, 16, 16, </column>
+                </table>
+            </item>
+            <item name="S_AXILITE Interfaces">
+                <table>
+                    <keys size="6">Interface, Data Width, Address Width, Offset, Register, Data Interface</keys>
+                    <column name="s_axi_control">32, 6, 16, 0, m_axi_gmem1</column>
+                </table>
+            </item>
+            <item name="S_AXILITE Registers">
+                <table>
+                    <keys size="7">Interface, Register, Offset, Width, Access, Description, Bit Fields</keys>
+                    <column name="s_axi_control">CTRL, 0x00, 32, RW, Control signals, 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT</column>
+                    <column name="s_axi_control">GIER, 0x04, 32, RW, Global Interrupt Enable Register, 0=Enable</column>
+                    <column name="s_axi_control">IP_IER, 0x08, 32, RW, IP Interrupt Enable Register, 0=CHAN0_INT_EN 1=CHAN1_INT_EN</column>
+                    <column name="s_axi_control">IP_ISR, 0x0c, 32, RW, IP Interrupt Status Register, 0=CHAN0_INT_ST 1=CHAN1_INT_ST</column>
+                    <column name="s_axi_control">x_1, 0x10, 32, W, Data signal of x, </column>
+                    <column name="s_axi_control">x_2, 0x14, 32, W, Data signal of x, </column>
+                    <column name="s_axi_control">y_1, 0x1c, 32, W, Data signal of y, </column>
+                    <column name="s_axi_control">y_2, 0x20, 32, W, Data signal of y, </column>
+                    <column name="s_axi_control">n, 0x28, 32, W, Data signal of n, </column>
+                </table>
+            </item>
+            <item name="TOP LEVEL CONTROL">
+                <table>
+                    <keys size="3">Interface, Type, Ports</keys>
+                    <column name="ap_clk">clock, ap_clk</column>
+                    <column name="ap_rst_n">reset, ap_rst_n</column>
+                    <column name="interrupt">interrupt, interrupt</column>
+                    <column name="ap_ctrl">ap_ctrl_hs, </column>
+                </table>
+            </item>
+        </section>
+    </ReportHWInterface>
+    <ReportSWInterface>
+        <section name="SW I/O Information" level="0">
+            <item name="Top Function Arguments">
+                <table>
+                    <keys size="3">Argument, Direction, Datatype</keys>
+                    <column name="x">in, float const *</column>
+                    <column name="y">out, float*</column>
+                    <column name="n">in, int</column>
+                </table>
+            </item>
+            <item name="SW-to-HW Mapping">
+                <table>
+                    <keys size="5">Argument, HW Interface, HW Type, HW Usage, HW Info</keys>
+                    <column name="x">m_axi_gmem0, interface, , channel=0</column>
+                    <column name="x">s_axi_control, register, offset, name=x_1 offset=0x10 range=32</column>
+                    <column name="x">s_axi_control, register, offset, name=x_2 offset=0x14 range=32</column>
+                    <column name="y">m_axi_gmem1, interface, , channel=0</column>
+                    <column name="y">s_axi_control, register, offset, name=y_1 offset=0x1c range=32</column>
+                    <column name="y">s_axi_control, register, offset, name=y_2 offset=0x20 range=32</column>
+                    <column name="n">s_axi_control, register, , name=n offset=0x28 range=32</column>
+                </table>
+            </item>
+        </section>
+    </ReportSWInterface>
+    <ResolutionUrl key="ZZZ">docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&amp;url=ug1448-hls-guidance&amp;resourceid=ZZZ.html</ResolutionUrl>
+    <ReportBurst>
+        <section name="M_AXI Burst Information" level="0" HEADER_NOTE="Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.">
+            <item name="Inferred Burst Summary">
+                <table>
+                    <keys size="6">HW Interface, Direction, Length, Width, Loop, Loop Location</keys>
+                    <column name="m_axi_gmem0">read, variable, 32, LEER, softmax_hls.cpp:101:5</column>
+                    <column name="m_axi_gmem1">write, variable, 32, ESCRIBIR, softmax_hls.cpp:193:5</column>
+                </table>
+            </item>
+            <item name="All M_AXI Variable Accesses">
+                <table>
+                    <keys size="10">HW Interface, Variable, Access Location, Direction, Burst Status, Length, Loop, Loop Location, Resolution, Problem</keys>
+                    <column name="m_axi_gmem0">x, softmax_hls.cpp:104:28, read, Widen Fail, , LEER, softmax_hls.cpp:101:5, 214-353, Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_gmem0">x, softmax_hls.cpp:104:28, read, Inferred, variable, LEER, softmax_hls.cpp:101:5, , </column>
+                    <column name="m_axi_gmem1">y, softmax_hls.cpp:196:14, write, Widen Fail, , ESCRIBIR, softmax_hls.cpp:193:5, 214-353, Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_gmem1">y, softmax_hls.cpp:196:14, write, Inferred, variable, ESCRIBIR, softmax_hls.cpp:193:5, , </column>
+                </table>
+            </item>
+        </section>
+    </ReportBurst>
+    <PragmaReport>
+        <Pragma type="loop_tripcount" status="valid" location="softmax_hls.cpp:102" parentFunction="leer" variable="" isDirective="0" options="min = 10 max = 1000"/>
+        <Pragma type="pipeline" status="valid" location="softmax_hls.cpp:103" parentFunction="leer" variable="" isDirective="0" options="II = 1"/>
+        <Pragma type="loop_tripcount" status="valid" location="softmax_hls.cpp:117" parentFunction="maximo" variable="" isDirective="0" options="min = 2 max = 125"/>
+        <Pragma type="pipeline" status="valid" location="softmax_hls.cpp:118" parentFunction="maximo" variable="" isDirective="0" options="II = 1"/>
+        <Pragma type="array_partition" status="invalid" location="softmax_hls.cpp:120" parentFunction="maximo" variable="" isDirective="0" options="variable = v complete">
+            <Msg msg_id="" msg_severity="ERROR" msg_body="Not implemented"/>
+        </Pragma>
+        <Pragma type="unroll" status="invalid" location="softmax_hls.cpp:122" parentFunction="maximo" variable="" isDirective="0" options="">
+            <Msg msg_id="" msg_severity="ERROR" msg_body="Not implemented"/>
+        </Pragma>
+        <Pragma type="unroll" status="invalid" location="softmax_hls.cpp:127" parentFunction="maximo" variable="" isDirective="0" options="">
+            <Msg msg_id="" msg_severity="ERROR" msg_body="Not implemented"/>
+        </Pragma>
+        <Pragma type="unroll" status="invalid" location="softmax_hls.cpp:129" parentFunction="maximo" variable="" isDirective="0" options="">
+            <Msg msg_id="" msg_severity="ERROR" msg_body="Not implemented"/>
+        </Pragma>
+        <Pragma type="loop_tripcount" status="valid" location="softmax_hls.cpp:144" parentFunction="exp_suma" variable="" isDirective="0" options="min = 2 max = 125"/>
+        <Pragma type="pipeline" status="valid" location="softmax_hls.cpp:148" parentFunction="exp_suma" variable="" isDirective="0" options="II = 1"/>
+        <Pragma type="array_partition" status="invalid" location="softmax_hls.cpp:151" parentFunction="exp_suma" variable="" isDirective="0" options="variable = v complete">
+            <Msg msg_id="" msg_severity="ERROR" msg_body="Not implemented"/>
+        </Pragma>
+        <Pragma type="unroll" status="invalid" location="softmax_hls.cpp:153" parentFunction="exp_suma" variable="" isDirective="0" options="">
+            <Msg msg_id="" msg_severity="ERROR" msg_body="Not implemented"/>
+        </Pragma>
+        <Pragma type="unroll" status="invalid" location="softmax_hls.cpp:163" parentFunction="exp_suma" variable="" isDirective="0" options="">
+            <Msg msg_id="" msg_severity="ERROR" msg_body="Not implemented"/>
+        </Pragma>
+        <Pragma type="unroll" status="invalid" location="softmax_hls.cpp:165" parentFunction="exp_suma" variable="" isDirective="0" options="">
+            <Msg msg_id="" msg_severity="ERROR" msg_body="Not implemented"/>
+        </Pragma>
+        <Pragma type="loop_tripcount" status="valid" location="softmax_hls.cpp:180" parentFunction="normalizar" variable="" isDirective="0" options="min = 2 max = 125"/>
+        <Pragma type="pipeline" status="valid" location="softmax_hls.cpp:181" parentFunction="normalizar" variable="" isDirective="0" options="II = 1"/>
+        <Pragma type="unroll" status="invalid" location="softmax_hls.cpp:183" parentFunction="normalizar" variable="" isDirective="0" options="">
+            <Msg msg_id="" msg_severity="ERROR" msg_body="Not implemented"/>
+        </Pragma>
+        <Pragma type="loop_tripcount" status="valid" location="softmax_hls.cpp:194" parentFunction="escribir" variable="" isDirective="0" options="min = 10 max = 1000"/>
+        <Pragma type="pipeline" status="valid" location="softmax_hls.cpp:195" parentFunction="escribir" variable="" isDirective="0" options="II = 1"/>
+        <Pragma type="dataflow" status="valid" location="softmax_hls.cpp:205" parentFunction="softmax_etapas" variable="" isDirective="0" options=""/>
+        <Pragma type="array_partition" status="valid" location="softmax_hls.cpp:213" parentFunction="softmax_etapas" variable="" isDirective="0" options="variable = xa cyclic factor = 8"/>
+        <Pragma type="array_partition" status="valid" location="softmax_hls.cpp:214" parentFunction="softmax_etapas" variable="" isDirective="0" options="variable = xb cyclic factor = 8"/>
+        <Pragma type="array_partition" status="valid" location="softmax_hls.cpp:215" parentFunction="softmax_etapas" variable="" isDirective="0" options="variable = t cyclic factor = 8"/>
+        <Pragma type="array_partition" status="valid" location="softmax_hls.cpp:216" parentFunction="softmax_etapas" variable="" isDirective="0" options="variable = yb cyclic factor = 8"/>
+        <Pragma type="interface" status="valid" location="softmax_hls.cpp:233" parentFunction="softmax_hls" variable="" isDirective="0" options="m_axi port = x offset = slave bundle = gmem0 depth = 1000"/>
+        <Pragma type="interface" status="valid" location="softmax_hls.cpp:234" parentFunction="softmax_hls" variable="" isDirective="0" options="m_axi port = y offset = slave bundle = gmem1 depth = 1000"/>
+        <Pragma type="interface" status="valid" location="softmax_hls.cpp:235" parentFunction="softmax_hls" variable="" isDirective="0" options="s_axilite port = n"/>
+        <Pragma type="interface" status="valid" location="softmax_hls.cpp:236" parentFunction="softmax_hls" variable="" isDirective="0" options="s_axilite port = return"/>
+        <Pragma type="inline" status="implemented" location="../../scratch/HEAD/hls_product/738/2026.1/src/shared/hls/clib/hlsmath/src/c++/expfloat.cpp:16" parentFunction="_zn3hls3expef" variable="" isDirective="0" options=""/>
+        <Pragma type="inline" status="implemented" location="../../scratch/HEAD/hls_product/738/2026.1/src/shared/hls/clib/hlsmath/src/common/hls_exp_float.cpp:16" parentFunction="_zn11exp_reduce_3expef" variable="" isDirective="0" options=""/>
+        <Pragma type="loop_tripcount" status="implemented" location="softmax_hls.cpp:102" parentFunction="leer_pipeline_leer" variable="" isDirective="0" options="max=1000 min=10 avg=505"/>
+        <Pragma type="loop_tripcount" status="implemented" location="softmax_hls.cpp:117" parentFunction="maximo_pipeline_maximo" variable="" isDirective="0" options="max=125 min=2 avg=63"/>
+        <Pragma type="loop_tripcount" status="implemented" location="softmax_hls.cpp:144" parentFunction="exp_suma_pipeline_exp_suma" variable="" isDirective="0" options="max=125 min=2 avg=63"/>
+        <Pragma type="loop_tripcount" status="implemented" location="softmax_hls.cpp:180" parentFunction="normalizar_pipeline_normaliza" variable="" isDirective="0" options="max=125 min=2 avg=63"/>
+        <Pragma type="loop_tripcount" status="implemented" location="softmax_hls.cpp:194" parentFunction="escribir_pipeline_escribir" variable="" isDirective="0" options="max=1000 min=10 avg=505"/>
+        <Pragma type="dataflow" status="implemented" location="softmax_hls.cpp:205" parentFunction="softmax_etapas" variable="" isDirective="0" options=" "/>
+        <Pragma type="array_partition" status="implemented" location="softmax_hls.cpp:213" parentFunction="softmax_etapas" variable="xa" isDirective="0" options="dim=1 type=cyclic factor=8 variable=xa"/>
+        <Pragma type="array_partition" status="implemented" location="softmax_hls.cpp:214" parentFunction="softmax_etapas" variable="xb" isDirective="0" options="dim=1 type=cyclic factor=8 variable=xb"/>
+        <Pragma type="array_partition" status="implemented" location="softmax_hls.cpp:215" parentFunction="softmax_etapas" variable="t" isDirective="0" options="dim=1 type=cyclic factor=8 variable=t"/>
+        <Pragma type="array_partition" status="implemented" location="softmax_hls.cpp:216" parentFunction="softmax_etapas" variable="yb" isDirective="0" options="dim=1 type=cyclic factor=8 variable=yb"/>
+    </PragmaReport>
+</profile>
