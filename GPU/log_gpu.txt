@@ -1,0 +1,14 @@
+>> Compilando
+>> Registrando entorno
+>> fp16 N=10
+>> fp16 N=100
+>> fp16 N=500
+>> fp16 N=1000
+>> fp32 N=10
+>> fp32 N=100
+>> fp32 N=500
+>> fp32 N=1000
+>> LISTO
+./run_gpu.sh: line 1: 26653 Terminated              ( stdbuf -oL tegrastats --interval 500 | while IFS= read -r l; do
+    echo "$(date +%s.%N) $l";
+done ) > "$RES/tegrastats.log" 2>&1

@@ -1,0 +1,6 @@
+proy_*/
+vivado_*/
+*.log
+*.jou
+.Xil/
+__pycache__/
